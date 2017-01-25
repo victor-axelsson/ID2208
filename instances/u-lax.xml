@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:company xmlns:ns2="http://www.kth.se/ns/jobservicecompany" id="gnqev08ll09hfpuv7m8774csd">
+    <companyName>U-lax</companyName>
+    <website>http://www.u-lax.com</website>
+    <numberOfEmployees>46</numberOfEmployees>
+    <office>
+        <lat>18.5330</lat>
+        <lng>18.5791</lng>
+    </office>
+</ns2:company>
