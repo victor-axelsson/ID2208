@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<xs:schema xmlns="http://www.skatestown.com/ns/po"
-xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.skatestown.com/ns/po">
+<xs:schema xmlns="http://www.kth.se/ns/jobservicecompany"
+xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.kth.se/ns/jobservicecompany">
 	<xs:element name="company">
 		<xs:complexType>
       		<xs:sequence maxOccurs="1">
