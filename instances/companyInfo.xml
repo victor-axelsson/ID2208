@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Document created with online XML Editor http://xmlgrid.net 2017/01/25 18:8:12  -->
+<company id="123">
+    <companyName>test string</companyName>
+    <website>test string</website>
+    <website>test string</website>
+    <website>test string</website>
+    <numberOfEmployees>9</numberOfEmployees>
+    <office officeName="test attribute">
+           <lat>59.3233705</lat>
+           <lng>18.0681967</lng>
+       </office>
+    <office officeName="test attribute">
+           <lat>59.3233705</lat>
+           <lng>18.0681967</lng>
+       </office>
+    <office officeName="test attribute">
+           <lat>59.3233705</lat>
+           <lng>18.0681967</lng>
+       </office>
+</company>
