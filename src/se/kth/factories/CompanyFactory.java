@@ -41,6 +41,8 @@ public class CompanyFactory {
             "Meddexon"
     };
 
+    String[] offices = {"Sales", "IT", "HumanResource", "Logistics", "MoneyLaundry"};
+
     private Random rand;
     public CompanyFactory(){
         rand = new Random();
@@ -65,6 +67,7 @@ public class CompanyFactory {
         company.getOffice().setLat(new BigDecimal(getRandomInt(5, 60) + "." + getRandomInt(1000, 5000)));
         company.getOffice().setLng(new BigDecimal(getRandomInt(5, 18) + "." + getRandomInt(1000, 5000)));
         company.setWebsite("http://www." + name.toLowerCase() + ".com");
+        company.getOffice().setOfficeName(getRandom(offices));
 
 
         return company;
