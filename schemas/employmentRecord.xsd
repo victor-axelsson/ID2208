@@ -1,53 +1,50 @@
 <?xml version="1.0"?>
 <xs:schema xmlns="http://www.kth.se/ns/jobservicecompany"
            xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.kth.se/ns/jobservicecompany">
-  <xs:element name="employmentRecord">
-    <xs:complexType>
-      <xs:sequence maxOccurs="1">
-        <xs:element name="firstName" maxOccurs="1">
-          <xs:simpleType>
-            <xs:restriction base="xs:string">
-              <xs:pattern value="^[a-zA-Z\s]*$"/>
-            </xs:restriction>
-          </xs:simpleType>
-        </xs:element>
-        <xs:element name="lastName" maxOccurs="1">
-          <xs:simpleType>
-            <xs:restriction base="xs:string">
-              <xs:pattern value="^[a-zA-Z\s]*$"/>
-            </xs:restriction>
-          </xs:simpleType>
-        </xs:element>
-        <xs:element name="companies" minOccurs="0" maxOccurs="1">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="company" minOccurs="1" maxOccurs="unbounded">
-                <xs:complexType>
-                  <xs:sequence>
-                    <xs:element name="role" minOccurs="1" maxOccurs="1">
-                      <xs:simpleType>
+    <xs:element name="employmentRecord">
+        <xs:complexType>
+            <xs:sequence maxOccurs="1">
+                <xs:element name="firstName" maxOccurs="1">
+                    <xs:simpleType>
                         <xs:restriction base="xs:string">
-                          <xs:pattern value="^[a-zA-Z\s]*$"/>
+                            <xs:pattern value="^[a-zA-Z\s]*$"/>
                         </xs:restriction>
-                      </xs:simpleType>
-                    </xs:element>
-                    <xs:element name="responsibilities" minOccurs="1" maxOccurs="1">
-                      <xs:simpleType>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="lastName" maxOccurs="1">
+                    <xs:simpleType>
                         <xs:restriction base="xs:string">
-                          <xs:pattern value="^[a-zA-Z\s]*$"/>
+                            <xs:pattern value="^[a-zA-Z\s]*$"/>
                         </xs:restriction>
-                      </xs:simpleType>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:sequence>
+                    <xs:element name="position" minOccurs="1" maxOccurs="unbounded">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="company" type="xs:string"/>
+                                <xs:element name="role" minOccurs="1" maxOccurs="1">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:pattern value="^[a-zA-Z\s]*$"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="responsibilities" minOccurs="1" maxOccurs="1">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:pattern value="^[a-zA-Z\s]*$"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="startDate" minOccurs="1" maxOccurs="1" type="xs:date"/>
+                                <xs:element name="finishDate" minOccurs="1" maxOccurs="1" type="xs:date"/>
+                            </xs:sequence>
+                        </xs:complexType>
                     </xs:element>
-                    <xs:element name="startDate" minOccurs="1" maxOccurs="1" type="xs:date"/>
-                    <xs:element name="finishDate" minOccurs="1" maxOccurs="1" type="xs:date"/>
-                  </xs:sequence>
-                </xs:complexType>
-              </xs:element>
+                </xs:sequence>
             </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-      </xs:sequence>
-      <xs:attribute name="id" type="xs:ID"/>
-    </xs:complexType>
-  </xs:element>
+            <xs:attribute name="id" type="xs:ID"/>
+        </xs:complexType>
+    </xs:element>
 </xs:schema>
