@@ -32,7 +32,7 @@
                                 <xs:sequence>
                                     <xs:element name="course">
                                         <xs:complexType>
-                                            <xs:sequence maxOccurs="1">
+                                            <xs:sequence minOccurs="1">
                                                 <xs:element name="name" minOccurs="1" maxOccurs="1">
                                                     <xs:simpleType>
                                                         <xs:restriction base="xs:string">
