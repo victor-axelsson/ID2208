@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7c60ea8-91f7-4eb0-b704-a26301a01450" name="Default" comment="path stuff">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/asignment1/se/kth/ns/jobservicecompany/Profile$University$Courses$Course.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/asignment1/se/kth/ns/jobservicecompany/Profile$University$Courses.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/asignment1/se/kth/factories/TranscriptFactory.class" afterPath="$PROJECT_DIR$/out/production/asignment1/se/kth/factories/TranscriptFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/asignment1/se/kth/ns/jobservicecompany/ObjectFactory.class" afterPath="$PROJECT_DIR$/out/production/asignment1/se/kth/ns/jobservicecompany/ObjectFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/asignment1/se/kth/ns/jobservicecompany/Profile$Position.class" afterPath="$PROJECT_DIR$/out/production/asignment1/se/kth/ns/jobservicecompany/Profile$Position.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/asignment1/se/kth/ns/jobservicecompany/Profile$Project.class" afterPath="$PROJECT_DIR$/out/production/asignment1/se/kth/ns/jobservicecompany/Profile$Project.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/asignment1/se/kth/ns/jobservicecompany/Profile$University.class" afterPath="$PROJECT_DIR$/out/production/asignment1/se/kth/ns/jobservicecompany/Profile$University.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/asignment1/se/kth/ns/jobservicecompany/Profile.class" afterPath="$PROJECT_DIR$/out/production/asignment1/se/kth/ns/jobservicecompany/Profile.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/asignment1/se/kth/factories/CompanyFactory.class" afterPath="$PROJECT_DIR$/out/production/asignment1/se/kth/factories/CompanyFactory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/asignment1/se/kth/factories/EmploymentFactory.class" afterPath="$PROJECT_DIR$/out/production/asignment1/se/kth/factories/EmploymentFactory.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/asignment1/se/kth/parsers/DomProfileIParsable.class" afterPath="$PROJECT_DIR$/out/production/asignment1/se/kth/parsers/DomProfileIParsable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/asignment1/se/kth/parsers/SaxProfileIParsable$CompanyHandler.class" afterPath="$PROJECT_DIR$/out/production/asignment1/se/kth/parsers/SaxProfileIParsable$CompanyHandler.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/asignment1/se/kth/parsers/SaxProfileIParsable$CvHandler.class" afterPath="$PROJECT_DIR$/out/production/asignment1/se/kth/parsers/SaxProfileIParsable$CvHandler.class" />
@@ -20,17 +14,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/instances/company.xml" afterPath="$PROJECT_DIR$/instances/company.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/instances/cv.xml" afterPath="$PROJECT_DIR$/instances/cv.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/instances/employmentRecord.xml" afterPath="$PROJECT_DIR$/instances/employmentRecord.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schemas/profile.xsd" afterPath="$PROJECT_DIR$/schemas/profile.xsd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/kth/factories/TranscriptFactory.java" afterPath="$PROJECT_DIR$/src/se/kth/factories/TranscriptFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/kth/ns/jobservicecompany/Company.java" afterPath="$PROJECT_DIR$/src/se/kth/ns/jobservicecompany/Company.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/kth/ns/jobservicecompany/Cv.java" afterPath="$PROJECT_DIR$/src/se/kth/ns/jobservicecompany/Cv.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/kth/ns/jobservicecompany/EmploymentRecord.java" afterPath="$PROJECT_DIR$/src/se/kth/ns/jobservicecompany/EmploymentRecord.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/kth/ns/jobservicecompany/ObjectFactory.java" afterPath="$PROJECT_DIR$/src/se/kth/ns/jobservicecompany/ObjectFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/kth/ns/jobservicecompany/Profile.java" afterPath="$PROJECT_DIR$/src/se/kth/ns/jobservicecompany/Profile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/kth/ns/jobservicecompany/Transcript.java" afterPath="$PROJECT_DIR$/src/se/kth/ns/jobservicecompany/Transcript.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/kth/ns/jobservicecompany/package-info.java" afterPath="$PROJECT_DIR$/src/se/kth/ns/jobservicecompany/package-info.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/kth/Main.java" afterPath="$PROJECT_DIR$/src/se/kth/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/kth/factories/CompanyFactory.java" afterPath="$PROJECT_DIR$/src/se/kth/factories/CompanyFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/kth/factories/EmploymentFactory.java" afterPath="$PROJECT_DIR$/src/se/kth/factories/EmploymentFactory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/kth/parsers/DomProfileIParsable.java" afterPath="$PROJECT_DIR$/src/se/kth/parsers/DomProfileIParsable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/kth/parsers/SaxProfileIParsable.java" afterPath="$PROJECT_DIR$/src/se/kth/parsers/SaxProfileIParsable.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,11 +36,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/se/kth/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="101" column="10" lean-forward="false" selection-start-line="101" selection-start-column="10" selection-end-line="101" selection-end-column="10" />
+            <state relative-caret-position="284">
+              <caret line="130" column="1" lean-forward="true" selection-start-line="130" selection-start-column="1" selection-end-line="130" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cv.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/instances/cv.xml">
+      <file leaf-file-name="CompanyFactory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/se/kth/factories/CompanyFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="150" lean-forward="false" selection-start-line="0" selection-start-column="150" selection-end-line="0" selection-end-column="150" />
+            <state relative-caret-position="365">
+              <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -81,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="employmentRecord.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/instances/employmentRecord.xml">
+      <file leaf-file-name="CvFactory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/se/kth/factories/CvFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
+            <state relative-caret-position="15">
+              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -116,8 +103,8 @@
       <file leaf-file-name="DomProfileIParsable.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/se/kth/parsers/DomProfileIParsable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1755">
-              <caret line="166" column="0" lean-forward="false" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+            <state relative-caret-position="290">
+              <caret line="202" column="9" lean-forward="true" selection-start-line="202" selection-start-column="9" selection-end-line="202" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -125,11 +112,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SaxProfileIParsable.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SaxProfileIParsable.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/se/kth/parsers/SaxProfileIParsable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="64" column="6" lean-forward="false" selection-start-line="64" selection-start-column="6" selection-end-line="67" selection-end-column="58" />
+            <state relative-caret-position="30">
+              <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="75" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -148,8 +135,8 @@
       <file leaf-file-name="EmploymentFactory.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/se/kth/factories/EmploymentFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+            <state relative-caret-position="104">
+              <caret line="17" column="46" lean-forward="false" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -166,6 +153,12 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>fillEmployeeRecord</find>
+      <find>fillCompanyInfo</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -180,20 +173,21 @@
         <option value="$PROJECT_DIR$/src/se/kth/parsers/Parser.java" />
         <option value="$PROJECT_DIR$/instances/x-lux.xml" />
         <option value="$PROJECT_DIR$/instances/jayronis.xml" />
-        <option value="$PROJECT_DIR$/src/se/kth/parsers/SaxProfileIParsable.java" />
         <option value="$PROJECT_DIR$/schemas/profile.xsd" />
         <option value="$PROJECT_DIR$/schemas/employmentRecord.xsd" />
         <option value="$PROJECT_DIR$/schemas/cv.xsd" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/se/kth/factories/EmploymentRecord.java" />
         <option value="$PROJECT_DIR$/instances/company.xml" />
-        <option value="$PROJECT_DIR$/src/se/kth/Main.java" />
-        <option value="$PROJECT_DIR$/src/se/kth/Main.java" />
         <option value="$PROJECT_DIR$/instances/cv.xml" />
-        <option value="$PROJECT_DIR$/src/se/kth/factories/EmploymentFactory.java" />
         <option value="$PROJECT_DIR$/schemas/transcript.xsd" />
         <option value="$PROJECT_DIR$/src/se/kth/factories/TranscriptFactory.java" />
+        <option value="$PROJECT_DIR$/src/se/kth/parsers/SaxProfileIParsable.java" />
         <option value="$PROJECT_DIR$/src/se/kth/parsers/DomProfileIParsable.java" />
+        <option value="$PROJECT_DIR$/src/se/kth/factories/EmploymentFactory.java" />
+        <option value="$PROJECT_DIR$/src/se/kth/factories/CompanyFactory.java" />
+        <option value="$PROJECT_DIR$/src/se/kth/Main.java" />
+        <option value="$PROJECT_DIR$/src/se/kth/Main.java" />
       </list>
     </option>
   </component>
@@ -253,50 +247,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="kth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asignment1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asignment1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parsers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asignment1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="asignment1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="factories" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -732,7 +682,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11780000" />
+    <option name="totallyTimeSpent" value="12668000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="704" extended-state="6" />
@@ -744,7 +694,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.50948507" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -754,7 +704,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.4905149" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3970588" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3970588" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -781,30 +731,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/se/kth/Main.java</url>
-          <line>41</line>
+          <line>42</line>
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/se/kth/parsers/DomProfileIParsable.java</url>
-          <line>151</line>
+          <line>204</line>
           <properties />
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/se/kth/parsers/DomProfileIParsable.java</url>
-          <line>132</line>
-          <properties />
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/se/kth/parsers/DomProfileIParsable.java</url>
-          <line>162</line>
-          <properties />
-          <option name="timeStamp" value="25" />
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="26" />
+      <option name="time" value="33" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -813,14 +751,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/instances/companyInfo.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="27" lean-forward="false" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/instances/u-lax.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1091,23 +1021,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/kth/factories/CompanyFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="56" column="51" lean-forward="true" selection-start-line="56" selection-start-column="51" selection-end-line="56" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/instances/gravelane.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/instances/profile.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1131,31 +1045,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/kth/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="101" column="10" lean-forward="false" selection-start-line="101" selection-start-column="10" selection-end-line="101" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/instances/cv.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="150" lean-forward="false" selection-start-line="0" selection-start-column="150" selection-end-line="0" selection-end-column="150" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/kth/factories/EmploymentFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1185,21 +1079,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/kth/parsers/SaxProfileIParsable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="75" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/se/kth/parsers/DomProfileIParsable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1755">
-          <caret line="166" column="0" lean-forward="false" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+        <state relative-caret-position="290">
+          <caret line="202" column="9" lean-forward="true" selection-start-line="202" selection-start-column="9" selection-end-line="202" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/kth/parsers/SaxProfileIParsable.java">
+    <entry file="file://$PROJECT_DIR$/src/se/kth/factories/CvFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="64" column="6" lean-forward="false" selection-start-line="64" selection-start-column="6" selection-end-line="67" selection-end-column="58" />
+        <state relative-caret-position="15">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/kth/factories/EmploymentFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="17" column="46" lean-forward="false" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/kth/factories/CompanyFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instances/profile.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/kth/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="130" column="1" lean-forward="true" selection-start-line="130" selection-start-column="1" selection-end-line="130" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

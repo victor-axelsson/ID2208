@@ -6,12 +6,14 @@ import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 import se.kth.ns.jobservicecompany.ObjectFactory;
 import se.kth.ns.jobservicecompany.Profile;
+import se.kth.ns.jobservicecompany.Transcript;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
+import java.math.BigDecimal;
 
 /**
  * Created by victoraxelsson on 2017-01-26.
@@ -50,7 +52,6 @@ public class DomProfileIParsable extends Parser implements IParsable {
 
         Profile.Position position = new Profile.Position();
         position.setCompanyName(companyName);
-        profile.getPosition().add(position);
 
         return profile;
     }
@@ -82,6 +83,8 @@ public class DomProfileIParsable extends Parser implements IParsable {
 
         //Add project
         Profile.Project project = new Profile.Project();
+        profile.setFirstName(firstname);
+        profile.setLastName(lastname);
         project.setName(projectName);
         project.setFinishDate(XMLGregorianCalendarImpl.parse(finishDate));
         project.setStartDate(XMLGregorianCalendarImpl.parse(startDate));
@@ -124,6 +127,8 @@ public class DomProfileIParsable extends Parser implements IParsable {
         position.setStartDate(XMLGregorianCalendarImpl.parse(startDate));
         position.setFinishDate(XMLGregorianCalendarImpl.parse(finishDate));
         position.setRole(role);
+
+
         profile.getPosition().add(position);
 
         return profile;
@@ -149,12 +154,18 @@ public class DomProfileIParsable extends Parser implements IParsable {
         Node courseIterator = child;
 
         //Parse courses
+        Profile.University profUni = new Profile.University();
         while (child.getLocalName().equals("course")){
+            Profile.University.Course profCourse = new Profile.University.Course();
             Node courseChild = child.getFirstChild();
             String name = courseChild.getTextContent();
 
             courseChild = courseChild.getNextSibling();
             String grade = courseChild.getTextContent();
+
+            profCourse.setGrade(new BigDecimal(grade));
+            profCourse.setName(name);
+            profUni.getCourse().add(profCourse);
 
             courseIterator = courseIterator.getNextSibling();
             child = child.getNextSibling();
@@ -165,7 +176,10 @@ public class DomProfileIParsable extends Parser implements IParsable {
 
         String stopTime = child.getTextContent();
 
-        profile.get
+        profUni.setStartDate(XMLGregorianCalendarImpl.parse(startTime));
+        profUni.setFinishDate(XMLGregorianCalendarImpl.parse(stopTime));
+        profUni.setDegree(degree);
+        profile.setUniversity(profUni);
 
         return profile;
     }

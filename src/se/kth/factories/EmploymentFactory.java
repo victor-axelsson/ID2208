@@ -16,7 +16,7 @@ public class EmploymentFactory extends Factory {
         record.setLastName("Barry");
 
         EmploymentRecord.Position position = new EmploymentRecord.Position();
-        position.setCompany("Co & sons");
+        position.setCompany("Co and sons");
         position.setFinishDate(new XMLGregorianCalendarImpl(new GregorianCalendar(1998, 12, 26)));
         position.setStartDate(new XMLGregorianCalendarImpl(new GregorianCalendar(1999, 12, 26)));
         position.setResponsibilities("I had none");
