@@ -5,6 +5,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 import se.kth.ns.jobservicecompany.Company;
+import se.kth.ns.jobservicecompany.EmploymentRecord;
 import se.kth.ns.jobservicecompany.ObjectFactory;
 import se.kth.ns.jobservicecompany.Profile;
 
@@ -107,14 +108,36 @@ public class DomProfileIParsable extends Parser implements IParsable {
     private Profile fillEmployeeRecord(Profile profile) throws ParserConfigurationException, IOException, SAXException {
         Document document = null;
         DocumentBuilder builder = factory.newDocumentBuilder();
-        document = builder.parse(new File(basePath + "instances/employeeRecord.xml"));
+        document = builder.parse(new File(basePath + "instances/employmentRecord.xml"));
         Node root = document.getFirstChild();
 
         Node child = root.getFirstChild();
+        String firstname = child.getTextContent();
+        child = child.getNextSibling();
+
+        String lastname = child.getTextContent();
+        child = child.getNextSibling().getFirstChild();
+
         String companyName = child.getTextContent();
+        child = child.getNextSibling();
+
+        String role = child.getTextContent();
+        child = child.getNextSibling();
+
+        String responsibilities = child.getTextContent();
+        child = child.getNextSibling();
+
+        String startDate = child.getTextContent();
+        child = child.getNextSibling();
+
+        String finishDate = child.getTextContent();
 
         Profile.Position position = new Profile.Position();
         position.setCompanyName(companyName);
+        position.setResponsibilities(responsibilities);
+        position.setStartDate(XMLGregorianCalendarImpl.parse(startDate));
+        position.setFinishDate(XMLGregorianCalendarImpl.parse(finishDate));
+        position.setRole(role);
         profile.getPosition().add(position);
 
         return profile;
