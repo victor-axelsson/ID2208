@@ -48,14 +48,25 @@ public class SaxProfileIParsable implements IParsable {
             saxParser.parse(new File(instances.getAbsolutePath() + "/company.xml"), new CompanyHandler());
             saxParser.parse(new File(instances.getAbsolutePath() + "/cv.xml"), new CvHandler());
             saxParser.parse(new File(instances.getAbsolutePath() + "/employmentRecord.xml"), new EmploymentHandler());
+            saxParser.parse(new File(instances.getAbsolutePath() + "/transcript.xml"), new TranscriptHandler());
         } catch (SAXException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
+        profile = new Profile();
         System.out.println(company);
         return null;
+    }
+
+    private void mergeTranscript(Profile profile, Transcript transcript) {
+        Transcript.University university = transcript.getUniversity();
+        Profile.University profUni = new Profile.University();
+        profUni.setDegree(university.getDegree());
+        profUni.setStartDate(university.getStartDate());
+        profUni.setFinishDate(university.getFinishDate());
+
     }
 
     class CompanyHandler extends DefaultHandler {
@@ -273,18 +284,20 @@ public class SaxProfileIParsable implements IParsable {
     class TranscriptHandler extends DefaultHandler {
         private boolean firstName;
         private boolean lastName;
-        private boolean position;
+        private boolean university;
         private boolean startDate;
         private boolean finishDate;
-        private boolean company;
-        private boolean role;
-        private boolean responsibilities;
+        private boolean degree;
+        private boolean course;
+        private boolean name;
+        private boolean grade;
 
-        EmploymentRecord.Position positionObj;
+        Transcript.University universityObj;
+        Transcript.University.Course courseObj;
 
         @Override
         public void startDocument() throws SAXException {
-            employmentRecord = new EmploymentRecord();
+            transcript = new Transcript();
         }
 
         @Override
@@ -292,23 +305,31 @@ public class SaxProfileIParsable implements IParsable {
             switch (qName) {
                 case "firstName": firstName = true; break;
                 case "lastName": lastName = true; break;
-                case "position": position = true; break;
+                case "university": university = true; break;
                 case "startDate": startDate = true; break;
                 case "finishDate": finishDate = true; break;
-                case "company": company = true; break;
-                case "role": role = true; break;
-                case "responsibilities": responsibilities = true; break;
+                case "degree": degree = true; break;
+                case "course": course = true; break;
+                case "name": name = true; break;
+                case "grade": grade = true; break;
             }
         }
 
         @Override
         public void endElement(String uri, String localName, String qName) throws SAXException {
-            if (position && (positionObj != null) && (positionObj.getStartDate() != null) &&
-                    (positionObj.getFinishDate() != null) && (positionObj.getCompany() != null) &&
-                    (positionObj.getResponsibilities() != null) && (positionObj.getRole() != null)) {
-                employmentRecord.getPosition().add(positionObj);
-                position = false;
-                positionObj = null;
+            if (university && (universityObj != null) && (universityObj.getStartDate() != null) &&
+                    (universityObj.getFinishDate() != null) && (universityObj.getDegree() != null) &&
+                    (universityObj.getCourse() != null)) {
+                transcript.setUniversity(universityObj);
+                university = false;
+                universityObj = null;
+            }
+
+            if (course && (courseObj != null) && (courseObj.getGrade() != null) &&
+                    (courseObj.getName() != null)) {
+                universityObj.getCourse().add(courseObj);
+                course = false;
+                courseObj = null;
             }
         }
 
@@ -316,36 +337,39 @@ public class SaxProfileIParsable implements IParsable {
         public void characters(char[] ch, int start, int length) throws SAXException {
             String content = new String(ch, start, length);
             if (firstName) {
-                employmentRecord.setFirstName(content);
+                transcript.setFirstName(content);
                 firstName = false;
             }
             if (lastName) {
-                employmentRecord.setLastName(content);
+                transcript.setLastName(content);
                 lastName = false;
             }
-            if (position) {
-                if (positionObj == null) positionObj = new EmploymentRecord.Position();
+            if (university) {
+                if (universityObj == null) universityObj = new Transcript.University();
             }
 
             if (startDate) {
-                positionObj.setStartDate(XMLGregorianCalendarImpl.parse(content));
+                universityObj.setStartDate(XMLGregorianCalendarImpl.parse(content));
                 startDate = false;
             }
             if (finishDate) {
-                positionObj.setFinishDate(XMLGregorianCalendarImpl.parse(content));
+                universityObj.setFinishDate(XMLGregorianCalendarImpl.parse(content));
                 finishDate = false;
             }
-            if (company) {
-                positionObj.setCompany(content);
-                company = false;
+            if (degree) {
+                universityObj.setDegree(content);
+                degree = false;
             }
-            if (role) {
-                positionObj.setRole(content);
-                role = false;
+            if (course) {
+                if (courseObj == null) courseObj = new Transcript.University.Course();
             }
-            if (responsibilities) {
-                positionObj.setResponsibilities(content);
-                responsibilities = false;
+            if (name) {
+                courseObj.setName(content);
+                name = false;
+            }
+            if (grade) {
+                courseObj.setGrade(new BigDecimal(content));
+                grade = false;
             }
         }
     }

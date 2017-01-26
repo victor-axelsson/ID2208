@@ -4,28 +4,14 @@ import com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
-import se.kth.ns.jobservicecompany.Company;
-import se.kth.ns.jobservicecompany.EmploymentRecord;
 import se.kth.ns.jobservicecompany.ObjectFactory;
 import se.kth.ns.jobservicecompany.Profile;
 
-import javax.xml.XMLConstants;
-import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.stream.StreamSource;
-import javax.xml.validation.Schema;
-import javax.xml.validation.SchemaFactory;
 import java.io.File;
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.GregorianCalendar;
-import java.util.HashMap;
-import java.util.List;
 
 /**
  * Created by victoraxelsson on 2017-01-26.
@@ -149,12 +135,37 @@ public class DomProfileIParsable extends Parser implements IParsable {
         document = builder.parse(new File(basePath + "instances/transcript.xml"));
         Node root = document.getFirstChild();
 
-        Node child = root.getFirstChild();
-        String companyName = child.getTextContent();
 
-        Profile.Position position = new Profile.Position();
-        position.setCompanyName(companyName);
-        profile.getPosition().add(position);
+        Node child = root.getFirstChild();
+        String firstname = child.getTextContent();
+        child = child.getNextSibling();
+
+        String lastname = child.getTextContent();
+        child = child.getNextSibling().getFirstChild();
+
+        String degree = child.getTextContent();
+        child = child.getNextSibling();
+
+        Node courseIterator = child;
+
+        //Parse courses
+        while (child.getLocalName().equals("course")){
+            Node courseChild = child.getFirstChild();
+            String name = courseChild.getTextContent();
+
+            courseChild = courseChild.getNextSibling();
+            String grade = courseChild.getTextContent();
+
+            courseIterator = courseIterator.getNextSibling();
+            child = child.getNextSibling();
+        }
+
+        String startTime = child.getTextContent();
+        child = child.getNextSibling();
+
+        String stopTime = child.getTextContent();
+
+        profile.get
 
         return profile;
     }
