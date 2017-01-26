@@ -58,6 +58,10 @@ public class DomProfileIParsable extends Parser implements IParsable {
             String numberOfempployees = child.getTextContent();
             child = child.getNextSibling();
 
+            Profile.Position position = new Profile.Position();
+            position.setCompanyName(companyName);
+            profile.getPosition().add(position);
+
             /*
             String lat = child.getTextContent();
             child = child.getNextSibling();
