@@ -31,8 +31,10 @@ public class Main {
         SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
         Schema schema = sf.newSchema(new StreamSource(new File("/Users/victoraxelsson/Desktop/web_services/asignment1/schemas/profile.xsd")));
 
-        JAXBContext jc = JAXBContext.newInstance(Company.class);
+        JAXBContext jc = JAXBContext.newInstance(Profile.class);
         Marshaller m = jc.createMarshaller();
+        m.setSchema(schema);
+
 
         /*
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
@@ -44,7 +46,7 @@ public class Main {
         //IParsable p = new SaxProfileIParsable();
 
         Profile profile = p.parse("dude");
-        m.marshal(profile, new File("/Users/victoraxelsson/Desktop/web_services/asignment1/instances/"+company.getCompanyName().toLowerCase()+".xml"));
+        m.marshal(profile, new File("/Users/victoraxelsson/Desktop/web_services/asignment1/instances/profile-"+company.getCompanyName().toLowerCase()+".xml"));
     }
 
 }
