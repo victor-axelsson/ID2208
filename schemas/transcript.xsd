@@ -19,28 +19,28 @@
                     </xs:simpleType>
                 </xs:element>
                 <xs:sequence>
-                    <xs:element name="university" minOccurs="1" maxOccurs="unbounded">
+                    <xs:element name="university" minOccurs="1">
                         <xs:complexType>
                             <xs:sequence>
-                                <xs:element name="degree" minOccurs="1" maxOccurs="1">
+                                <xs:element name="degree" minOccurs="1">
                                     <xs:simpleType>
                                         <xs:restriction base="xs:string">
                                             <xs:pattern value="[A-Za-z\s]*"/>
                                         </xs:restriction>
                                     </xs:simpleType>
                                 </xs:element>
-                                <xs:sequence>
+                                <xs:sequence minOccurs="1" maxOccurs="unbounded">
                                     <xs:element name="course">
                                         <xs:complexType>
-                                            <xs:sequence minOccurs="1">
-                                                <xs:element name="name" minOccurs="1" maxOccurs="1">
+                                            <xs:sequence>
+                                                <xs:element name="name" minOccurs="1">
                                                     <xs:simpleType>
                                                         <xs:restriction base="xs:string">
                                                             <xs:pattern value="[A-Za-z\s]*"/>
                                                         </xs:restriction>
                                                     </xs:simpleType>
                                                 </xs:element>
-                                                <xs:element name="grade" minOccurs="1" maxOccurs="1">
+                                                <xs:element name="grade" minOccurs="1">
                                                     <xs:simpleType>
                                                         <xs:restriction base="xs:decimal">
                                                             <xs:minInclusive value="0"/>

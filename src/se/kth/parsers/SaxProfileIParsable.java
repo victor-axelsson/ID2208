@@ -269,4 +269,84 @@ public class SaxProfileIParsable implements IParsable {
             }
         }
     }
+
+    class TranscriptHandler extends DefaultHandler {
+        private boolean firstName;
+        private boolean lastName;
+        private boolean position;
+        private boolean startDate;
+        private boolean finishDate;
+        private boolean company;
+        private boolean role;
+        private boolean responsibilities;
+
+        EmploymentRecord.Position positionObj;
+
+        @Override
+        public void startDocument() throws SAXException {
+            employmentRecord = new EmploymentRecord();
+        }
+
+        @Override
+        public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+            switch (qName) {
+                case "firstName": firstName = true; break;
+                case "lastName": lastName = true; break;
+                case "position": position = true; break;
+                case "startDate": startDate = true; break;
+                case "finishDate": finishDate = true; break;
+                case "company": company = true; break;
+                case "role": role = true; break;
+                case "responsibilities": responsibilities = true; break;
+            }
+        }
+
+        @Override
+        public void endElement(String uri, String localName, String qName) throws SAXException {
+            if (position && (positionObj != null) && (positionObj.getStartDate() != null) &&
+                    (positionObj.getFinishDate() != null) && (positionObj.getCompany() != null) &&
+                    (positionObj.getResponsibilities() != null) && (positionObj.getRole() != null)) {
+                employmentRecord.getPosition().add(positionObj);
+                position = false;
+                positionObj = null;
+            }
+        }
+
+        @Override
+        public void characters(char[] ch, int start, int length) throws SAXException {
+            String content = new String(ch, start, length);
+            if (firstName) {
+                employmentRecord.setFirstName(content);
+                firstName = false;
+            }
+            if (lastName) {
+                employmentRecord.setLastName(content);
+                lastName = false;
+            }
+            if (position) {
+                if (positionObj == null) positionObj = new EmploymentRecord.Position();
+            }
+
+            if (startDate) {
+                positionObj.setStartDate(XMLGregorianCalendarImpl.parse(content));
+                startDate = false;
+            }
+            if (finishDate) {
+                positionObj.setFinishDate(XMLGregorianCalendarImpl.parse(content));
+                finishDate = false;
+            }
+            if (company) {
+                positionObj.setCompany(content);
+                company = false;
+            }
+            if (role) {
+                positionObj.setRole(content);
+                role = false;
+            }
+            if (responsibilities) {
+                positionObj.setResponsibilities(content);
+                responsibilities = false;
+            }
+        }
+    }
 }

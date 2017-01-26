@@ -19,19 +19,20 @@ public class TranscriptFactory extends Factory {
         university.setStartDate(new XMLGregorianCalendarImpl(new GregorianCalendar(1920, 12, 26)));
         university.setFinishDate(new XMLGregorianCalendarImpl(new GregorianCalendar(1998, 12, 26)));
         university.setDegree("Ms in SittingOnWalls");
+        transcript.setUniversity(university);
 
-        Transcript.University.Courses courses = new Transcript.University.Courses();
-        Profile.University.Courses.Course c1 = new Profile.University.Courses.Course();
+        Transcript.University.Course c1 = new Transcript.University.Course();
         c1.setGrade(new BigDecimal("10"));
         c1.setName("Sitting down");
 
-        Profile.University.Courses.Course c2 = new Profile.University.Courses.Course();
+        Transcript.University.Course c2 = new Transcript.University.Course();
         c2.setGrade(new BigDecimal("8"));
         c2.setName("History of walls");
 
 
+        transcript.getUniversity().getCourse().add(c1);
+        transcript.getUniversity().getCourse().add(c2);
 
-        transcript.getUniversity().add(university);
 
         return transcript;
     }
