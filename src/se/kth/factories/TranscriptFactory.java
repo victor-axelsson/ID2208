@@ -20,7 +20,8 @@ public class TranscriptFactory extends Factory {
         university.setFinishDate(new XMLGregorianCalendarImpl(new GregorianCalendar(1998, 12, 26)));
         university.setDegree("Ms in SittingOnWalls");
 
-        Transcript.University.Courses courses = new Transcript.University.Courses();
+
+        //Transcript.University.Courses courses = new Transcript.University.Courses();
         Profile.University.Courses.Course c1 = new Profile.University.Courses.Course();
         c1.setGrade(new BigDecimal("10"));
         c1.setName("Sitting down");

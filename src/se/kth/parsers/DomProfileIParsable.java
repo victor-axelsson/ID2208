@@ -1,5 +1,6 @@
 package se.kth.parsers;
 
+import com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
@@ -8,6 +9,9 @@ import se.kth.ns.jobservicecompany.ObjectFactory;
 import se.kth.ns.jobservicecompany.Profile;
 
 import javax.xml.XMLConstants;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -16,6 +20,9 @@ import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.List;
 
@@ -67,13 +74,32 @@ public class DomProfileIParsable extends Parser implements IParsable {
         document = builder.parse(new File(basePath + "instances/cv.xml"));
         Node root = document.getFirstChild();
 
-
         Node child = root.getFirstChild();
-        String companyName = child.getTextContent();
+        String firstname = child.getTextContent();
+        child = child.getNextSibling();
 
-        Profile.Position position = new Profile.Position();
-        position.setCompanyName(companyName);
-        profile.getPosition().add(position);
+        String lastname = child.getTextContent();
+        child = child.getNextSibling().getFirstChild();
+
+        String startDate = child.getTextContent();
+        child = child.getNextSibling();
+
+        String finishDate = child.getTextContent();
+        child = child.getNextSibling();
+
+        String projectName = child.getTextContent();
+        child = child.getNextSibling();
+
+        String projectDescription = child.getTextContent();
+        child = child.getNextSibling();
+
+        //Add project
+        Profile.Project project = new Profile.Project();
+        project.setName(projectName);
+        project.setFinishDate(XMLGregorianCalendarImpl.parse(finishDate));
+        project.setStartDate(XMLGregorianCalendarImpl.parse(startDate));
+        profile.getProject().add(project);
+
 
         return profile;
     }

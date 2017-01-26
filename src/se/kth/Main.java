@@ -99,7 +99,7 @@ public class Main {
         generateCompanies();
         generateEmployments();
         generateCvs();
-        generateTranscripts();
+        //generateTranscripts();
 
         File schemas = Paths.get(".", "schemas").normalize().toFile();
         File instances = Paths.get(".", "instances").normalize().toFile();
