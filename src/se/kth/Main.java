@@ -2,12 +2,9 @@ package se.kth;
 
 import se.kth.factories.CompanyFactory;
 import se.kth.factories.EmploymentFactory;
-import se.kth.ns.jobservicecompany.Company;
-import se.kth.ns.jobservicecompany.EmploymentRecord;
+import se.kth.factories.TranscriptFactory;
+import se.kth.ns.jobservicecompany.*;
 import se.kth.factories.CvFactory;
-import se.kth.ns.jobservicecompany.Cv;
-import se.kth.ns.jobservicecompany.ObjectFactory;
-import se.kth.ns.jobservicecompany.Profile;
 import se.kth.parsers.DomProfileIParsable;
 import se.kth.parsers.IParsable;
 
@@ -80,9 +77,29 @@ public class Main {
         m.marshal(cv, new File(instances.getAbsolutePath()+"/cv.xml"));
     }
 
+    private static void generateTranscripts() throws Exception{
+        File schemas = Paths.get(".", "schemas").normalize().toFile();
+        File instances = Paths.get(".", "instances").normalize().toFile();
+
+        TranscriptFactory transcriptFactory = new TranscriptFactory();
+        ObjectFactory objFactory = new ObjectFactory();
+        Transcript transcript = objFactory.createTranscript();
+        transcript = transcriptFactory.fillWithCrapData(transcript);
+
+        SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+        Schema schema = sf.newSchema(new StreamSource(new File(schemas.getAbsolutePath() + "/transcript.xsd")));
+
+        JAXBContext jc = JAXBContext.newInstance(Transcript.class);
+        Marshaller m = jc.createMarshaller();
+        m.setSchema(schema);
+        m.marshal(transcript, new File(instances.getAbsolutePath()+"/transcript.xml"));
+    }
+
     public static void main(String[] args) throws Exception {
         generateCompanies();
         generateEmployments();
+        generateCvs();
+        generateTranscripts();
 
         File schemas = Paths.get(".", "schemas").normalize().toFile();
         File instances = Paths.get(".", "instances").normalize().toFile();
