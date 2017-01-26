@@ -79,7 +79,7 @@ public class SaxProfileIParsable implements IParsable {
     private void mergeCv(Profile profile, Cv cv) {
         for (Cv.Project cvProj : cv.getProject()) {
             Profile.Project project = new Profile.Project();
-            project.setName(project.getName());
+            project.setName(cvProj.getName());
             project.setStartDate(cvProj.getStartDate());
             project.setFinishDate(cvProj.getFinishDate());
             profile.getProject().add(project);
