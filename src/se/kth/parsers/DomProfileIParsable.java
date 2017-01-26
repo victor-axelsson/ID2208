@@ -25,60 +25,50 @@ import java.util.List;
 public class DomProfileIParsable extends Parser implements IParsable {
 
     private String basePath = "/Users/victoraxelsson/Desktop/web_services/asignment1/";
+    private DocumentBuilderFactory factory;
 
-    @Override
-    public Profile parse(String username) {
 
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+    public DomProfileIParsable(){
+        factory = DocumentBuilderFactory.newInstance();
         factory.setValidating(true);
         factory.setNamespaceAware(true);
         factory.setIgnoringElementContentWhitespace(true);
         factory.setAttribute( "http://java.sun.com/xml/jaxp/properties/schemaLanguage", "http://www.w3.org/2001/XMLSchema");
         factory.setAttribute( "http://java.sun.com/xml/jaxp/properties/schemaSource", basePath + "/schemas/companyInfo.xsd");
+    }
 
+    private Profile fillCompanyInfo(Profile profile) throws ParserConfigurationException, IOException, SAXException {
+        Document document = null;
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        document = builder.parse(new File(basePath + "instances/jayronis.xml"));
+        Node root = document.getFirstChild();
+        /*
+        String companyName = node.getFirstChild().getTextContent();
+        node = node.getNextSibling();
+        */
+        Node child = root.getFirstChild();
+        String companyName = child.getTextContent();
+        child = child.getNextSibling();
+        String website = child.getTextContent();
+        child = child.getNextSibling();
+        String numberOfempployees = child.getTextContent();
+        child = child.getNextSibling();
 
+        Profile.Position position = new Profile.Position();
+        position.setCompanyName(companyName);
+        profile.getPosition().add(position);
+
+        return profile;
+    }
+
+    @Override
+    public Profile parse(String username) {
         ObjectFactory objFactory = new ObjectFactory();
         Profile profile = objFactory.createProfile();
 
-        Document document = null;
+
         try {
-
-            DocumentBuilder builder = factory.newDocumentBuilder();
-            document = builder.parse(new File(basePath + "instances/jayronis.xml"));
-            Node root = document.getFirstChild();
-            /*
-            String companyName = node.getFirstChild().getTextContent();
-            node = node.getNextSibling();
-            */
-            Node child = root.getFirstChild();
-            String companyName = child.getTextContent();
-            child = child.getNextSibling();
-            String website = child.getTextContent();
-            child = child.getNextSibling();
-            String numberOfempployees = child.getTextContent();
-            child = child.getNextSibling();
-
-            Profile.Position position = new Profile.Position();
-            position.setCompanyName(companyName);
-            profile.getPosition().add(position);
-
-            /*
-            String lat = child.getTextContent();
-            child = child.getNextSibling();
-            String lng = child.getTextContent();
-            child = child.getNextSibling();
-            */
-
-
-            /*
-            for (Node child = root.getFirstChild(); child != null; child = child.getNextSibling()) {
-
-
-            }
-                */
-
-             // fill the profiler object form the document reader
-
+            profile = fillCompanyInfo(profile);
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
         } catch (SAXException e) {
