@@ -4,14 +4,14 @@
     <xs:element name="profile">
         <xs:complexType>
             <xs:sequence maxOccurs="1">
-                <xs:element name="firstName" type="xs:string" maxOccurs="1">
+                <xs:element name="firstName" maxOccurs="1">
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
                             <xs:pattern value="^[a-zA-Z\s]*$"/>
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
-                <xs:element name="lastName" type="xs:string" maxOccurs="1">
+                <xs:element name="lastName" maxOccurs="1">
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
                             <xs:pattern value="^[a-zA-Z\s]*$"/>
