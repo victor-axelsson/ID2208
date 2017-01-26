@@ -14,6 +14,7 @@ import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import java.io.File;
+import java.nio.file.Paths;
 
 /**
  * Created by victoraxelsson on 2017-01-25.
@@ -21,6 +22,8 @@ import java.io.File;
 public class Main {
 
     public static void main(String[] args) throws Exception {
+        File schemas = Paths.get(".", "schemas").normalize().toFile();
+        File instances = Paths.get(".", "instances").normalize().toFile();
 
         CompanyFactory companyFactory = new CompanyFactory();
 
@@ -29,7 +32,7 @@ public class Main {
         company = companyFactory.fillCompanyWithCrapData(company);
 
         SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-        Schema schema = sf.newSchema(new StreamSource(new File("/Users/victoraxelsson/Desktop/web_services/asignment1/schemas/profile.xsd")));
+        Schema schema = sf.newSchema(new StreamSource(new File(schemas.getAbsolutePath() + "/profile.xsd")));
 
         JAXBContext jc = JAXBContext.newInstance(Profile.class);
         Marshaller m = jc.createMarshaller();
@@ -46,7 +49,7 @@ public class Main {
         //IParsable p = new SaxProfileIParsable();
 
         Profile profile = p.parse("dude");
-        m.marshal(profile, new File("/Users/victoraxelsson/Desktop/web_services/asignment1/instances/profile-"+company.getCompanyName().toLowerCase()+".xml"));
+        m.marshal(profile, new File(instances.getAbsolutePath()+"/"+company.getCompanyName().toLowerCase()+".xml"));
     }
 
 }
