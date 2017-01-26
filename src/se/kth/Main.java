@@ -1,7 +1,9 @@
 package se.kth;
 
 import se.kth.factories.CompanyFactory;
+import se.kth.factories.EmploymentFactory;
 import se.kth.ns.jobservicecompany.Company;
+import se.kth.ns.jobservicecompany.EmploymentRecord;
 import se.kth.ns.jobservicecompany.ObjectFactory;
 import se.kth.ns.jobservicecompany.Profile;
 import se.kth.parsers.DomProfileIParsable;
@@ -39,7 +41,30 @@ public class Main {
         m.marshal(company, new File(instances.getAbsolutePath()+"/company.xml"));
     }
 
+    private static void generateEmployments() throws Exception{
+        File schemas = Paths.get(".", "schemas").normalize().toFile();
+        File instances = Paths.get(".", "instances").normalize().toFile();
+
+        EmploymentFactory employmentFactory = new EmploymentFactory();
+        ObjectFactory objFactory = new ObjectFactory();
+        EmploymentRecord record = objFactory.createEmploymentRecord();
+        record = employmentFactory.fillWithCrapData(record);
+
+
+        SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+        Schema schema = sf.newSchema(new StreamSource(new File(schemas.getAbsolutePath() + "/employmentRecord.xsd")));
+
+        JAXBContext jc = JAXBContext.newInstance(EmploymentRecord.class);
+        Marshaller m = jc.createMarshaller();
+        m.setSchema(schema);
+        m.marshal(record, new File(instances.getAbsolutePath()+"/employmentRecord.xml"));
+    }
+
     public static void main(String[] args) throws Exception {
+        generateCompanies();
+        generateEmployments();
+
+
         File schemas = Paths.get(".", "schemas").normalize().toFile();
         File instances = Paths.get(".", "instances").normalize().toFile();
 

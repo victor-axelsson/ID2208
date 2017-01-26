@@ -67,6 +67,39 @@ public class DomProfileIParsable extends Parser implements IParsable {
         document = builder.parse(new File(basePath + "instances/cv.xml"));
         Node root = document.getFirstChild();
 
+
+        Node child = root.getFirstChild();
+        String companyName = child.getTextContent();
+
+        Profile.Position position = new Profile.Position();
+        position.setCompanyName(companyName);
+        profile.getPosition().add(position);
+
+        return profile;
+    }
+
+    private Profile fillEmployeeRecord(Profile profile) throws ParserConfigurationException, IOException, SAXException {
+        Document document = null;
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        document = builder.parse(new File(basePath + "instances/employeeRecord.xml"));
+        Node root = document.getFirstChild();
+
+        Node child = root.getFirstChild();
+        String companyName = child.getTextContent();
+
+        Profile.Position position = new Profile.Position();
+        position.setCompanyName(companyName);
+        profile.getPosition().add(position);
+
+        return profile;
+    }
+
+    private Profile fillTranscript(Profile profile) throws ParserConfigurationException, IOException, SAXException {
+        Document document = null;
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        document = builder.parse(new File(basePath + "instances/transcript.xml"));
+        Node root = document.getFirstChild();
+
         Node child = root.getFirstChild();
         String companyName = child.getTextContent();
 
@@ -82,9 +115,11 @@ public class DomProfileIParsable extends Parser implements IParsable {
         ObjectFactory objFactory = new ObjectFactory();
         Profile profile = objFactory.createProfile();
 
-
         try {
             profile = fillCompanyInfo(profile);
+            profile = fillCv(profile);
+            profile = fillEmployeeRecord(profile);
+            profile = fillTranscript(profile);
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
         } catch (SAXException e) {
@@ -93,19 +128,6 @@ public class DomProfileIParsable extends Parser implements IParsable {
             e.printStackTrace();
         }
 
-        // Do shiet
-
         return profile;
-
-        /*
-        List<Company> companies = getAllCompanies();
-
-
-        ObjectFactory objFactory = new ObjectFactory();
-        Company company = objFactory.createCompany();
-
-        SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-        //Schema schema = sf.newSchema(new StreamSource(new File("/Users/victoraxelsson/Desktop/web_services/asignment1/schemas/profile.xsd")));
-        */
     }
 }
