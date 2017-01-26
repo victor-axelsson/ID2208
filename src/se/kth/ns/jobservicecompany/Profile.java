@@ -37,14 +37,14 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="firstName">
  *           &lt;simpleType>
  *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;pattern value="^[a-zA-Z\s]*$"/>
+ *               &lt;pattern value="[A-Za-z\s]*"/>
  *             &lt;/restriction>
  *           &lt;/simpleType>
  *         &lt;/element>
  *         &lt;element name="lastName">
  *           &lt;simpleType>
  *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;pattern value="^[a-zA-Z\s]*$"/>
+ *               &lt;pattern value="[A-Za-z\s]*"/>
  *             &lt;/restriction>
  *           &lt;/simpleType>
  *         &lt;/element>
@@ -57,21 +57,21 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *                     &lt;element name="companyName">
  *                       &lt;simpleType>
  *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                           &lt;pattern value="^[a-zA-Z\s]*$"/>
+ *                           &lt;pattern value="[A-Za-z\s]*"/>
  *                         &lt;/restriction>
  *                       &lt;/simpleType>
  *                     &lt;/element>
  *                     &lt;element name="role">
  *                       &lt;simpleType>
  *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                           &lt;pattern value="^[a-zA-Z\s]*$"/>
+ *                           &lt;pattern value="[A-Za-z\s]*"/>
  *                         &lt;/restriction>
  *                       &lt;/simpleType>
  *                     &lt;/element>
  *                     &lt;element name="responsibilities">
  *                       &lt;simpleType>
  *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                           &lt;pattern value="^[a-zA-Z\s]*$"/>
+ *                           &lt;pattern value="[A-Za-z\s]*"/>
  *                         &lt;/restriction>
  *                       &lt;/simpleType>
  *                     &lt;/element>
@@ -92,7 +92,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *                     &lt;element name="degree">
  *                       &lt;simpleType>
  *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                           &lt;pattern value="^[a-zA-Z\s]*$"/>
+ *                           &lt;pattern value="[A-Za-z\s]*"/>
  *                         &lt;/restriction>
  *                       &lt;/simpleType>
  *                     &lt;/element>
@@ -109,7 +109,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *                                         &lt;element name="name">
  *                                           &lt;simpleType>
  *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                               &lt;pattern value="^[a-zA-Z\s]*$"/>
+ *                                               &lt;pattern value="[A-Za-z\s]*"/>
  *                                             &lt;/restriction>
  *                                           &lt;/simpleType>
  *                                         &lt;/element>
@@ -150,7 +150,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *                     &lt;element name="name">
  *                       &lt;simpleType>
  *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                           &lt;pattern value="^[a-zA-Z\s]*$"/>
+ *                           &lt;pattern value="[A-Za-z\s]*"/>
  *                         &lt;/restriction>
  *                       &lt;/simpleType>
  *                     &lt;/element>
@@ -369,21 +369,21 @@ public class Profile {
      *         &lt;element name="companyName">
      *           &lt;simpleType>
      *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *               &lt;pattern value="^[a-zA-Z\s]*$"/>
+     *               &lt;pattern value="[A-Za-z\s]*"/>
      *             &lt;/restriction>
      *           &lt;/simpleType>
      *         &lt;/element>
      *         &lt;element name="role">
      *           &lt;simpleType>
      *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *               &lt;pattern value="^[a-zA-Z\s]*$"/>
+     *               &lt;pattern value="[A-Za-z\s]*"/>
      *             &lt;/restriction>
      *           &lt;/simpleType>
      *         &lt;/element>
      *         &lt;element name="responsibilities">
      *           &lt;simpleType>
      *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *               &lt;pattern value="^[a-zA-Z\s]*$"/>
+     *               &lt;pattern value="[A-Za-z\s]*"/>
      *             &lt;/restriction>
      *           &lt;/simpleType>
      *         &lt;/element>
@@ -558,7 +558,7 @@ public class Profile {
      *         &lt;element name="name">
      *           &lt;simpleType>
      *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *               &lt;pattern value="^[a-zA-Z\s]*$"/>
+     *               &lt;pattern value="[A-Za-z\s]*"/>
      *             &lt;/restriction>
      *           &lt;/simpleType>
      *         &lt;/element>
@@ -675,7 +675,7 @@ public class Profile {
      *         &lt;element name="degree">
      *           &lt;simpleType>
      *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *               &lt;pattern value="^[a-zA-Z\s]*$"/>
+     *               &lt;pattern value="[A-Za-z\s]*"/>
      *             &lt;/restriction>
      *           &lt;/simpleType>
      *         &lt;/element>
@@ -692,7 +692,7 @@ public class Profile {
      *                             &lt;element name="name">
      *                               &lt;simpleType>
      *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                   &lt;pattern value="^[a-zA-Z\s]*$"/>
+     *                                   &lt;pattern value="[A-Za-z\s]*"/>
      *                                 &lt;/restriction>
      *                               &lt;/simpleType>
      *                             &lt;/element>
@@ -859,7 +859,7 @@ public class Profile {
          *                   &lt;element name="name">
          *                     &lt;simpleType>
          *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                         &lt;pattern value="^[a-zA-Z\s]*$"/>
+         *                         &lt;pattern value="[A-Za-z\s]*"/>
          *                       &lt;/restriction>
          *                     &lt;/simpleType>
          *                   &lt;/element>
@@ -931,7 +931,7 @@ public class Profile {
              *         &lt;element name="name">
              *           &lt;simpleType>
              *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *               &lt;pattern value="^[a-zA-Z\s]*$"/>
+             *               &lt;pattern value="[A-Za-z\s]*"/>
              *             &lt;/restriction>
              *           &lt;/simpleType>
              *         &lt;/element>
