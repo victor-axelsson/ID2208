@@ -26,10 +26,6 @@ public class SaxProfileIParsable implements IParsable {
     Transcript transcript;
     Cv cv;
 
-    public static void main(String[] args) {
-        new SaxProfileIParsable().parse("aa");
-    }
-
     @Override
     public Profile parse(String username) {
 
@@ -56,8 +52,13 @@ public class SaxProfileIParsable implements IParsable {
         }
 
         profile = new Profile();
-        System.out.println(company);
-        return null;
+        profile.setFirstName(cv.getFirstName());
+        profile.setLastName(cv.getLastName());
+        mergeTranscript(profile, transcript);
+        mergeCv(profile, cv);
+        mergeEmployment(profile, employmentRecord, company);
+        //System.out.println(company);
+        return profile;
     }
 
     private void mergeTranscript(Profile profile, Transcript transcript) {
@@ -66,7 +67,35 @@ public class SaxProfileIParsable implements IParsable {
         profUni.setDegree(university.getDegree());
         profUni.setStartDate(university.getStartDate());
         profUni.setFinishDate(university.getFinishDate());
+        for (Transcript.University.Course course : university.getCourse()) {
+            Profile.University.Course profCourse = new Profile.University.Course();
+            profCourse.setGrade(course.getGrade());
+            profCourse.setName(course.getName());
+            profUni.getCourse().add(profCourse);
+        }
+        profile.setUniversity(profUni);
+    }
 
+    private void mergeCv(Profile profile, Cv cv) {
+        for (Cv.Project cvProj : cv.getProject()) {
+            Profile.Project project = new Profile.Project();
+            project.setName(project.getName());
+            project.setStartDate(cvProj.getStartDate());
+            project.setFinishDate(cvProj.getFinishDate());
+            profile.getProject().add(project);
+        }
+    }
+
+    private void mergeEmployment(Profile profile, EmploymentRecord employmentRecord, Company company) {
+        for (EmploymentRecord.Position empPos : employmentRecord.getPosition()) {
+            Profile.Position position = new Profile.Position();
+            position.setStartDate(empPos.getStartDate());
+            position.setFinishDate(empPos.getFinishDate());
+            position.setCompanyName(empPos.getCompany());
+            position.setResponsibilities(empPos.getResponsibilities());
+            position.setRole(empPos.getRole());
+            profile.getPosition().add(position);
+        }
     }
 
     class CompanyHandler extends DefaultHandler {
