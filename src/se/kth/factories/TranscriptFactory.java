@@ -1,7 +1,6 @@
 package se.kth.factories;
 
 import com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl;
-import se.kth.ns.jobservicecompany.Profile;
 import se.kth.ns.jobservicecompany.Transcript;
 
 import java.math.BigDecimal;
