@@ -4,8 +4,9 @@
 
 ##xjc -p companyInfo.xml -d src companyInfo.xsd
 
-cp instances/companyInfo.xml ./
-cp schemas/companyInfo.xsd ./
-xjc -d src companyInfo.xsd
-rm companyInfo.xsd
-rm companyInfo.xml
+#cp instances/companyInfo.xml ./
+#cp schemas/companyInfo.xsd ./
+xjc -d src schemas/*.xsd
+
+#rm companyInfo.xsd
+#rm companyInfo.xml
