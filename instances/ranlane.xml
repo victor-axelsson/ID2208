@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:company xmlns:ns2="http://www.kth.se/ns/jobservicecompany" id="s5u3o4mbgtc7cho9v4129l16mq9">
+    <companyName>ranlane</companyName>
+    <website>http://www.ranlane.com</website>
+    <numberOfEmployees>90</numberOfEmployees>
+    <office officeName="HumanResource">
+        <lat>30.1958</lat>
+        <lng>6.3419</lng>
+    </office>
+</ns2:company>

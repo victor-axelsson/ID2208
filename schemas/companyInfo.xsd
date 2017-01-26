@@ -5,14 +5,35 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.kth.se/n
 		<xs:complexType>
       		<xs:sequence maxOccurs="1">
 				<xs:element name="companyName" type="xs:string" maxOccurs="1"/>
-				<xs:element name="website" type="xs:string" />
+				<!-- <xs:element name="website" type="xs:string" /> -->
+				<xs:element name="website">
+				  <xs:simpleType>
+				    <xs:restriction base="xs:string">
+		    	      	<xs:pattern value="[hH][tT]{2}[pP]://[wW]{3}.*"/>
+				    </xs:restriction>
+				  </xs:simpleType>
+				</xs:element>
 				<xs:element name="numberOfEmployees" type="xs:integer" maxOccurs="1"/>
 				<xs:element name="office">
 					<xs:complexType>
-      					<xs:sequence>
-      						<xs:element name="lat" type="xs:decimal" default="59.3233705" maxOccurs="1"/>
-      						<xs:element name="lng" type="xs:decimal" default="18.0681967" maxOccurs="1"/>
-  						</xs:sequence>
+						<xs:sequence>
+						<xs:element name="lat">
+						  <xs:simpleType>
+						    <xs:restriction base="xs:decimal">
+				    	      	<xs:minInclusive value="0"/>
+  								<xs:maxInclusive value="180"/>
+						    </xs:restriction>
+						  </xs:simpleType>
+						</xs:element>
+						<xs:element name="lng">
+						  <xs:simpleType>
+						    <xs:restriction base="xs:decimal">
+						    	<xs:minInclusive value="0"/>
+  								<xs:maxInclusive value="180"/>
+						    </xs:restriction>
+						  </xs:simpleType>
+						</xs:element>
+      					</xs:sequence>
 						<xs:attribute name="officeName" type="xs:string"/>
   					</xs:complexType>
 				</xs:element>
