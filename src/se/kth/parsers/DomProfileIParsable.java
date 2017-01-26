@@ -61,6 +61,22 @@ public class DomProfileIParsable extends Parser implements IParsable {
         return profile;
     }
 
+    private Profile fillCv(Profile profile) throws ParserConfigurationException, IOException, SAXException {
+        Document document = null;
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        document = builder.parse(new File(basePath + "instances/cv.xml"));
+        Node root = document.getFirstChild();
+
+        Node child = root.getFirstChild();
+        String companyName = child.getTextContent();
+
+        Profile.Position position = new Profile.Position();
+        position.setCompanyName(companyName);
+        profile.getPosition().add(position);
+
+        return profile;
+    }
+
     @Override
     public Profile parse(String username) {
         ObjectFactory objFactory = new ObjectFactory();

@@ -42,7 +42,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         File schemas = Paths.get(".", "schemas").normalize().toFile();
         File instances = Paths.get(".", "instances").normalize().toFile();
-        
+
 
         SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
         Schema schema = sf.newSchema(new StreamSource(new File(schemas.getAbsolutePath() + "/profile.xsd")));
@@ -62,7 +62,7 @@ public class Main {
         //IParsable p = new SaxProfileIParsable();
 
         Profile profile = p.parse("dude");
-        m.marshal(profile, new File(instances.getAbsolutePath()+"/"+company.getCompanyName().toLowerCase()+".xml"));
+        m.marshal(profile, new File(instances.getAbsolutePath()+"/profile.xml"));
     }
 
 }
