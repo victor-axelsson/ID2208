@@ -4,6 +4,8 @@ import se.kth.factories.CompanyFactory;
 import se.kth.factories.EmploymentFactory;
 import se.kth.ns.jobservicecompany.Company;
 import se.kth.ns.jobservicecompany.EmploymentRecord;
+import se.kth.factories.CvFactory;
+import se.kth.ns.jobservicecompany.Cv;
 import se.kth.ns.jobservicecompany.ObjectFactory;
 import se.kth.ns.jobservicecompany.Profile;
 import se.kth.parsers.DomProfileIParsable;
@@ -60,14 +62,30 @@ public class Main {
         m.marshal(record, new File(instances.getAbsolutePath()+"/employmentRecord.xml"));
     }
 
+    private static void generateCvs() throws Exception{
+        File schemas = Paths.get(".", "schemas").normalize().toFile();
+        File instances = Paths.get(".", "instances").normalize().toFile();
+
+        CvFactory cvFactory = new CvFactory();
+        ObjectFactory objFactory = new ObjectFactory();
+        Cv cv = objFactory.createCv();
+        cv = cvFactory.fillCvWithCrapData(cv);
+
+        SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+        Schema schema = sf.newSchema(new StreamSource(new File(schemas.getAbsolutePath() + "/cv.xsd")));
+
+        JAXBContext jc = JAXBContext.newInstance(Cv.class);
+        Marshaller m = jc.createMarshaller();
+        m.setSchema(schema);
+        m.marshal(cv, new File(instances.getAbsolutePath()+"/cv.xml"));
+    }
+
     public static void main(String[] args) throws Exception {
         generateCompanies();
         generateEmployments();
 
-
         File schemas = Paths.get(".", "schemas").normalize().toFile();
         File instances = Paths.get(".", "instances").normalize().toFile();
-
 
         SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
         Schema schema = sf.newSchema(new StreamSource(new File(schemas.getAbsolutePath() + "/profile.xsd")));
@@ -87,6 +105,8 @@ public class Main {
         //IParsable p = new SaxProfileIParsable();
 
         Profile profile = p.parse("dude");
+
+
         m.marshal(profile, new File(instances.getAbsolutePath()+"/profile.xml"));
     }
 

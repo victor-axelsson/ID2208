@@ -37,14 +37,14 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="firstName">
  *           &lt;simpleType>
  *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;pattern value="^[a-zA-Z\s]*$"/>
+ *               &lt;pattern value="[A-Za-z\s]*"/>
  *             &lt;/restriction>
  *           &lt;/simpleType>
  *         &lt;/element>
  *         &lt;element name="lastName">
  *           &lt;simpleType>
  *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;pattern value="^[a-zA-Z\s]*$"/>
+ *               &lt;pattern value="[A-Za-z\s]*"/>
  *             &lt;/restriction>
  *           &lt;/simpleType>
  *         &lt;/element>
@@ -57,7 +57,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *                     &lt;element name="degree">
  *                       &lt;simpleType>
  *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                           &lt;pattern value="^[a-zA-Z\s]*$"/>
+ *                           &lt;pattern value="[A-Za-z\s]*"/>
  *                         &lt;/restriction>
  *                       &lt;/simpleType>
  *                     &lt;/element>
@@ -74,7 +74,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *                                         &lt;element name="name">
  *                                           &lt;simpleType>
  *                                             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *                                               &lt;pattern value="^[a-zA-Z\s]*$"/>
+ *                                               &lt;pattern value="[A-Za-z\s]*"/>
  *                                             &lt;/restriction>
  *                                           &lt;/simpleType>
  *                                         &lt;/element>
@@ -249,7 +249,7 @@ public class Transcript {
      *         &lt;element name="degree">
      *           &lt;simpleType>
      *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *               &lt;pattern value="^[a-zA-Z\s]*$"/>
+     *               &lt;pattern value="[A-Za-z\s]*"/>
      *             &lt;/restriction>
      *           &lt;/simpleType>
      *         &lt;/element>
@@ -266,7 +266,7 @@ public class Transcript {
      *                             &lt;element name="name">
      *                               &lt;simpleType>
      *                                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-     *                                   &lt;pattern value="^[a-zA-Z\s]*$"/>
+     *                                   &lt;pattern value="[A-Za-z\s]*"/>
      *                                 &lt;/restriction>
      *                               &lt;/simpleType>
      *                             &lt;/element>
@@ -433,7 +433,7 @@ public class Transcript {
          *                   &lt;element name="name">
          *                     &lt;simpleType>
          *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-         *                         &lt;pattern value="^[a-zA-Z\s]*$"/>
+         *                         &lt;pattern value="[A-Za-z\s]*"/>
          *                       &lt;/restriction>
          *                     &lt;/simpleType>
          *                   &lt;/element>
@@ -505,7 +505,7 @@ public class Transcript {
              *         &lt;element name="name">
              *           &lt;simpleType>
              *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
-             *               &lt;pattern value="^[a-zA-Z\s]*$"/>
+             *               &lt;pattern value="[A-Za-z\s]*"/>
              *             &lt;/restriction>
              *           &lt;/simpleType>
              *         &lt;/element>
