@@ -9,7 +9,6 @@
 package se.kth.ns.jobservicecompany;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -20,6 +19,7 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
@@ -32,23 +32,15 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="companyName" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="website">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;pattern value="[hH][tT]{2}[pP]://[wW]{3}.*"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="numberOfEmployees" type="{http://www.w3.org/2001/XMLSchema}integer"/>
- *         &lt;element name="office">
+ *         &lt;element name="userName" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="projects">
  *           &lt;complexType>
  *             &lt;complexContent>
  *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *                 &lt;sequence>
- *                   &lt;element name="lat">
+ *                   &lt;element name="project">
  *                     &lt;simpleType>
- *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
+ *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}date">
  *                         &lt;minInclusive value="0"/>
  *                         &lt;maxInclusive value="180"/>
  *                       &lt;/restriction>
@@ -63,7 +55,6 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *                     &lt;/simpleType>
  *                   &lt;/element>
  *                 &lt;/sequence>
- *                 &lt;attribute name="officeName" type="{http://www.w3.org/2001/XMLSchema}string" />
  *               &lt;/restriction>
  *             &lt;/complexContent>
  *           &lt;/complexType>
@@ -79,22 +70,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "companyName",
-    "website",
-    "numberOfEmployees",
-    "office"
+    "userName",
+    "projects"
 })
-@XmlRootElement(name = "company")
-public class Company {
+@XmlRootElement(name = "cv")
+public class Cv {
 
     @XmlElement(required = true)
-    protected String companyName;
+    protected String userName;
     @XmlElement(required = true)
-    protected String website;
-    @XmlElement(required = true)
-    protected BigInteger numberOfEmployees;
-    @XmlElement(required = true)
-    protected Company.Office office;
+    protected Cv.Projects projects;
     @XmlAttribute(name = "id")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlID
@@ -102,99 +87,51 @@ public class Company {
     protected String id;
 
     /**
-     * Gets the value of the companyName property.
+     * Gets the value of the userName property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getCompanyName() {
-        return companyName;
+    public String getUserName() {
+        return userName;
     }
 
     /**
-     * Sets the value of the companyName property.
+     * Sets the value of the userName property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setCompanyName(String value) {
-        this.companyName = value;
+    public void setUserName(String value) {
+        this.userName = value;
     }
 
     /**
-     * Gets the value of the website property.
+     * Gets the value of the projects property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Cv.Projects }
      *     
      */
-    public String getWebsite() {
-        return website;
+    public Cv.Projects getProjects() {
+        return projects;
     }
 
     /**
-     * Sets the value of the website property.
+     * Sets the value of the projects property.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Cv.Projects }
      *     
      */
-    public void setWebsite(String value) {
-        this.website = value;
-    }
-
-    /**
-     * Gets the value of the numberOfEmployees property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getNumberOfEmployees() {
-        return numberOfEmployees;
-    }
-
-    /**
-     * Sets the value of the numberOfEmployees property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setNumberOfEmployees(BigInteger value) {
-        this.numberOfEmployees = value;
-    }
-
-    /**
-     * Gets the value of the office property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Company.Office }
-     *     
-     */
-    public Company.Office getOffice() {
-        return office;
-    }
-
-    /**
-     * Sets the value of the office property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Company.Office }
-     *     
-     */
-    public void setOffice(Company.Office value) {
-        this.office = value;
+    public void setProjects(Cv.Projects value) {
+        this.projects = value;
     }
 
     /**
@@ -232,9 +169,9 @@ public class Company {
      *   &lt;complexContent>
      *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
      *       &lt;sequence>
-     *         &lt;element name="lat">
+     *         &lt;element name="project">
      *           &lt;simpleType>
-     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}decimal">
+     *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}date">
      *               &lt;minInclusive value="0"/>
      *               &lt;maxInclusive value="180"/>
      *             &lt;/restriction>
@@ -249,7 +186,6 @@ public class Company {
      *           &lt;/simpleType>
      *         &lt;/element>
      *       &lt;/sequence>
-     *       &lt;attribute name="officeName" type="{http://www.w3.org/2001/XMLSchema}string" />
      *     &lt;/restriction>
      *   &lt;/complexContent>
      * &lt;/complexType>
@@ -259,40 +195,38 @@ public class Company {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
-        "lat",
+        "project",
         "lng"
     })
-    public static class Office {
+    public static class Projects {
 
         @XmlElement(required = true)
-        protected BigDecimal lat;
+        protected XMLGregorianCalendar project;
         @XmlElement(required = true)
         protected BigDecimal lng;
-        @XmlAttribute(name = "officeName")
-        protected String officeName;
 
         /**
-         * Gets the value of the lat property.
+         * Gets the value of the project property.
          * 
          * @return
          *     possible object is
-         *     {@link BigDecimal }
+         *     {@link XMLGregorianCalendar }
          *     
          */
-        public BigDecimal getLat() {
-            return lat;
+        public XMLGregorianCalendar getProject() {
+            return project;
         }
 
         /**
-         * Sets the value of the lat property.
+         * Sets the value of the project property.
          * 
          * @param value
          *     allowed object is
-         *     {@link BigDecimal }
+         *     {@link XMLGregorianCalendar }
          *     
          */
-        public void setLat(BigDecimal value) {
-            this.lat = value;
+        public void setProject(XMLGregorianCalendar value) {
+            this.project = value;
         }
 
         /**
@@ -317,30 +251,6 @@ public class Company {
          */
         public void setLng(BigDecimal value) {
             this.lng = value;
-        }
-
-        /**
-         * Gets the value of the officeName property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getOfficeName() {
-            return officeName;
-        }
-
-        /**
-         * Sets the value of the officeName property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setOfficeName(String value) {
-            this.officeName = value;
         }
 
     }
