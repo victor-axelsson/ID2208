@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<xs:schema xmlns="http://www.kth.se/ns/jobservicecompany"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.kth.se/ns/jobservicecompany">
+  <xs:element name="profile">
+    <xs:complexType>
+      <xs:sequence maxOccurs="1">
+        <xs:element name="userName" type="xs:string" maxOccurs="1"/>
+        <!--<xs:element name="projects" maxOccurs="1">-->
+        <!--<xs:simpleType>-->
+        <!--<xs:restriction base="xs:string">-->
+        <!--<xs:pattern value="[hH][tT]{2}[pP]://[wW]{3}.*"/>-->
+        <!--</xs:restriction>-->
+        <!--</xs:simpleType>-->
+        <!--</xs:element>-->
+        <!--<xs:element name="numberOfEmployees" type="xs:integer" maxOccurs="1"/>-->
+        <xs:element name="projects">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="project">
+                <xs:simpleType>
+                  <xs:restriction base="xs:date">
+                    <xs:minInclusive value="0"/>
+                    <xs:maxInclusive value="180"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="lng">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:minInclusive value="0"/>
+                    <xs:maxInclusive value="180"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+            <!--<xs:attribute name="officeName" type="xs:string"/>-->
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:ID"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
