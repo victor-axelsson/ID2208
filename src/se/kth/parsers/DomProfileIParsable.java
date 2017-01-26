@@ -27,8 +27,8 @@ public class DomProfileIParsable extends Parser implements IParsable {
         factory.setValidating(true);
         factory.setNamespaceAware(true);
         factory.setIgnoringElementContentWhitespace(true);
-        factory.setAttribute( "http://java.sun.com/xml/jaxp/properties/schemaLanguage,", "http://www.w3.org/2001/XMLSchema");
-        factory.setAttribute( "http://java.sun.com/xml/jaxp/properties/ schemaSource", "YourXSDName");
+        factory.setAttribute( "http://java.sun.com/xml/jaxp/properties/schemaLanguage", "http://www.w3.org/2001/XMLSchema");
+        factory.setAttribute( "http://java.sun.com/xml/jaxp/properties/schemaSource", "YourXSDName");
 
 
         ObjectFactory objFactory = new ObjectFactory();
