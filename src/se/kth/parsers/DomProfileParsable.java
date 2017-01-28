@@ -2,6 +2,7 @@ package se.kth.parsers;
 
 import com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 import se.kth.ns.jobservicecompany.ObjectFactory;
@@ -18,13 +19,13 @@ import java.math.BigDecimal;
 /**
  * Created by victoraxelsson on 2017-01-26.
  */
-public class DomProfileIParsable extends Parser implements IParsable {
+public class DomProfileParsable extends Parser implements IParsable {
 
     private String basePath = "/Users/victoraxelsson/Desktop/web_services/asignment1/";
     private DocumentBuilderFactory factory;
 
 
-    public DomProfileIParsable(){
+    public DomProfileParsable(){
         factory = DocumentBuilderFactory.newInstance();
         factory.setValidating(true);
         factory.setNamespaceAware(true);
@@ -50,8 +51,26 @@ public class DomProfileIParsable extends Parser implements IParsable {
         String numberOfempployees = child.getTextContent();
         child = child.getNextSibling();
 
-        Profile.Position position = new Profile.Position();
-        position.setCompanyName(companyName);
+        Element e = (Element)child;
+        String officeName = e.getAttribute("officeName");
+
+        child = child.getFirstChild();
+
+        //Parse courses
+        String lat = child.getTextContent();
+
+        child = child.getNextSibling();
+        String lng = child.getTextContent();
+
+        Profile.Position.Office office = new Profile.Position.Office();
+        office.setLat(new BigDecimal(lat));
+        office.setLng(new BigDecimal(lng));
+        office.setOfficeName(officeName);
+
+        for(int i = 0; i < profile.getPosition().size(); i++){
+            profile.getPosition().get(i).setOffice(office);
+        }
+
 
         return profile;
     }
@@ -190,9 +209,9 @@ public class DomProfileIParsable extends Parser implements IParsable {
         Profile profile = objFactory.createProfile();
 
         try {
+            profile = fillEmployeeRecord(profile);
             profile = fillCompanyInfo(profile);
             profile = fillCv(profile);
-            profile = fillEmployeeRecord(profile);
             profile = fillTranscript(profile);
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
