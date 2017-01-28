@@ -13,10 +13,10 @@
 	</xsl:template>
 
 	<xsl:template match="/">
-		<profile xmlns:ns2="http://www.kth.se/ns/jobservicecompany">
+		<ns2:profile xmlns:ns2="http://www.kth.se/ns/jobservicecompany">
 			<xsl:copy-of select="$cv/*/firstName"/>
 			<xsl:copy-of select="$cv/*/lastName"/>
-			<postion>
+			<position>
 				<companyName>
 					<xsl:value-of select="$employmentRecord/*/position/company"/>
 				</companyName>
@@ -25,13 +25,13 @@
 				<xsl:copy-of select="$employmentRecord/*/position/startDate"/>
 				<xsl:copy-of select="$employmentRecord/*/position/finishDate"/>
 				<xsl:copy-of select="$company/*/office"/>
-			</postion>
+			</position>
 			<xsl:copy-of select="$transcript/*/university"/>
 			<project>
 				<xsl:copy-of select="$cv/*/project/startDate"/>
 				<xsl:copy-of select="$cv/*/project/finishDate"/>
 				<xsl:copy-of select="$cv/*/project/name"/>
 			</project>
-		</profile>
+		</ns2:profile>
 	</xsl:template>
 </xsl:stylesheet>
