@@ -20,7 +20,7 @@ import java.nio.file.Paths;
 /**
  * Created by victoraxelsson on 2017-01-26.
  */
-public class DomProfileParsable extends Parser implements IParsable {
+public class DomProfileParsable extends Parser {
 
     private DocumentBuilderFactory factory;
 

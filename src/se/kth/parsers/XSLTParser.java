@@ -17,7 +17,7 @@ import javax.xml.transform.Transformer;
 /**
  * Created by victoraxelsson on 2017-01-28.
  */
-public class XSLTParser extends Parser implements IParsable {
+public class XSLTParser extends Parser {
     @Override
     public Profile parse(String username) {
 

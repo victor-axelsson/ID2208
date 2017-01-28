@@ -18,7 +18,7 @@ import java.nio.file.Paths;
 /**
  * Created by victoraxelsson on 2017-01-26.
  */
-public class SaxProfileIParsable implements IParsable {
+public class SaxProfileIParsable {
 
     Profile profile;
     Company company;

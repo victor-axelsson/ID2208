@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by victoraxelsson on 2017-01-26.
  */
-public abstract class Parser {
+public abstract class Parser implements IParsable {
 
     protected File schemas;
     protected File instances;
@@ -19,13 +19,5 @@ public abstract class Parser {
     public Parser(){
         schemas = Paths.get(".", "schemas").normalize().toFile();
         instances = Paths.get(".", "instances").normalize().toFile();
-    }
-
-    protected List<Company> getAllCompanies(){
-        List<Company> companies = new ArrayList<>();
-
-
-
-        return companies;
     }
 }
