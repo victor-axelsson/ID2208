@@ -1,17 +1,16 @@
 <?xml version="1.0"?>
-<xs:schema xmlns="http://www.kth.se/ns/jobservicecompany"
-           xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.kth.se/ns/jobservicecompany">
+<xs:schema targetNamespace="http://www.kth.se/ns/jobservicecompany" xmlns="http://www.kth.se/ns/jobservicecompany" xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:element name="profile">
         <xs:complexType>
             <xs:sequence maxOccurs="1">
-                <xs:element name="firstName" maxOccurs="1">
+                <xs:element maxOccurs="1" name="firstName">
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
                             <xs:pattern value="[A-Za-z\s]*"/>
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
-                <xs:element name="lastName" maxOccurs="1">
+                <xs:element maxOccurs="1" name="lastName">
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
                             <xs:pattern value="[A-Za-z\s]*"/>
@@ -19,59 +18,82 @@
                     </xs:simpleType>
                 </xs:element>
                 <xs:sequence>
-                    <xs:element name="position" minOccurs="1" maxOccurs="unbounded">
+                    <xs:element maxOccurs="unbounded" minOccurs="1" name="position">
                         <xs:complexType>
                             <xs:sequence>
-                                <xs:element name="companyName" minOccurs="1" maxOccurs="1">
+                                <xs:element maxOccurs="1" minOccurs="1" name="companyName">
                                     <xs:simpleType>
                                         <xs:restriction base="xs:string">
                                             <xs:pattern value="[A-Za-z\s]*"/>
                                         </xs:restriction>
                                     </xs:simpleType>
                                 </xs:element>
-                                <xs:element name="role" minOccurs="1" maxOccurs="1">
+                                <xs:element maxOccurs="1" minOccurs="1" name="role">
                                     <xs:simpleType>
                                         <xs:restriction base="xs:string">
                                             <xs:pattern value="[A-Za-z\s]*"/>
                                         </xs:restriction>
                                     </xs:simpleType>
                                 </xs:element>
-                                <xs:element name="responsibilities" minOccurs="1" maxOccurs="1">
+                                <xs:element maxOccurs="1" minOccurs="1" name="responsibilities">
                                     <xs:simpleType>
                                         <xs:restriction base="xs:string">
                                             <xs:pattern value="[A-Za-z\s]*"/>
                                         </xs:restriction>
                                     </xs:simpleType>
                                 </xs:element>
-                                <xs:element name="startDate" minOccurs="1" maxOccurs="1" type="xs:date"/>
-                                <xs:element name="finishDate" minOccurs="1" maxOccurs="1" type="xs:date"/>
+                                <xs:element maxOccurs="1" minOccurs="1" name="startDate" type="xs:date"/>
+                                <xs:element maxOccurs="1" minOccurs="1" name="finishDate" type="xs:date"/>
+                                <xs:element name="office">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="lat">
+                                                <xs:simpleType>
+                                                    <xs:restriction base="xs:decimal">
+                                                        <xs:minInclusive value="0"/>
+                                                        <xs:maxInclusive value="180"/>
+                                                    </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:element>
+                                            <xs:element name="lng">
+                                                <xs:simpleType>
+                                                    <xs:restriction base="xs:decimal">
+                                                        <xs:minInclusive value="0"/>
+                                                        <xs:maxInclusive value="180"/>
+                                                    </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:element>
+                                        </xs:sequence>
+                                        <xs:attribute name="officeName" type="xs:string"/>
+                                    </xs:complexType>
+                                </xs:element>
                             </xs:sequence>
                         </xs:complexType>
                     </xs:element>
                 </xs:sequence>
                 <xs:sequence>
-                    <xs:element name="university" minOccurs="1">
+                    <xs:element minOccurs="1" name="university">
                         <xs:complexType>
                             <xs:sequence>
-                                <xs:element name="degree" minOccurs="1">
+                                <xs:element minOccurs="1" name="degree">
                                     <xs:simpleType>
                                         <xs:restriction base="xs:string">
                                             <xs:pattern value="[A-Za-z\s]*"/>
                                         </xs:restriction>
                                     </xs:simpleType>
                                 </xs:element>
-                                <xs:sequence minOccurs="1" maxOccurs="unbounded">
+                                <xs:sequence maxOccurs="unbounded" minOccurs="1">
                                     <xs:element name="course">
                                         <xs:complexType>
                                             <xs:sequence>
-                                                <xs:element name="name" minOccurs="1">
+                                                <xs:element minOccurs="1" name="name">
                                                     <xs:simpleType>
                                                         <xs:restriction base="xs:string">
                                                             <xs:pattern value="[A-Za-z\s]*"/>
                                                         </xs:restriction>
                                                     </xs:simpleType>
                                                 </xs:element>
-                                                <xs:element name="grade" minOccurs="1">
+                                                <xs:element minOccurs="1" name="grade">
                                                     <xs:simpleType>
                                                         <xs:restriction base="xs:decimal">
                                                             <xs:minInclusive value="0"/>
@@ -83,19 +105,19 @@
                                         </xs:complexType>
                                     </xs:element>
                                 </xs:sequence>
-                                <xs:element name="startDate" minOccurs="1" maxOccurs="1" type="xs:date"/>
-                                <xs:element name="finishDate" minOccurs="1" maxOccurs="1" type="xs:date"/>
+                                <xs:element maxOccurs="1" minOccurs="1" name="startDate" type="xs:date"/>
+                                <xs:element maxOccurs="1" minOccurs="1" name="finishDate" type="xs:date"/>
                             </xs:sequence>
                         </xs:complexType>
                     </xs:element>
                 </xs:sequence>
                 <xs:sequence>
-                    <xs:element name="project" minOccurs="1" maxOccurs="unbounded">
+                    <xs:element maxOccurs="unbounded" minOccurs="1" name="project">
                         <xs:complexType>
                             <xs:sequence>
-                                <xs:element name="startDate" minOccurs="1" maxOccurs="1" type="xs:date"/>
-                                <xs:element name="finishDate" minOccurs="1" maxOccurs="1" type="xs:date"/>
-                                <xs:element name="name" minOccurs="1" maxOccurs="1">
+                                <xs:element maxOccurs="1" minOccurs="1" name="startDate" type="xs:date"/>
+                                <xs:element maxOccurs="1" minOccurs="1" name="finishDate" type="xs:date"/>
+                                <xs:element maxOccurs="1" minOccurs="1" name="name">
                                     <xs:simpleType>
                                         <xs:restriction base="xs:string">
                                             <xs:pattern value="[A-Za-z\s]*"/>
