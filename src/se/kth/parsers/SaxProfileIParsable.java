@@ -67,12 +67,17 @@ public class SaxProfileIParsable {
         profUni.setDegree(university.getDegree());
         profUni.setStartDate(university.getStartDate());
         profUni.setFinishDate(university.getFinishDate());
+        BigDecimal gpa = BigDecimal.ZERO;
+        int courseCount = 0;
         for (Transcript.University.Course course : university.getCourse()) {
             Profile.University.Course profCourse = new Profile.University.Course();
+            courseCount++;
             profCourse.setGrade(course.getGrade());
+            gpa = gpa.add(course.getGrade()).divide(BigDecimal.valueOf(courseCount * 1.0));
             profCourse.setName(course.getName());
             profUni.getCourse().add(profCourse);
         }
+        profUni.setGPA(gpa);
         profile.setUniversity(profUni);
     }
 

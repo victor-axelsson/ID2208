@@ -83,15 +83,18 @@ public class JAXBparser extends Parser {
     private Profile fillTranscript(Profile profile, Transcript transcript){
 
         Profile.University profUni = new Profile.University();
+        BigDecimal gpa = BigDecimal.ZERO;
+        int courseCount = 0;
         for(int i = 0; i < transcript.getUniversity().getCourse().size(); i++){
             Transcript.University.Course c = transcript.getUniversity().getCourse().get(i);
-
+            courseCount++;
             Profile.University.Course profCourse = new Profile.University.Course();
             profCourse.setGrade(c.getGrade());
+            gpa = gpa.add(c.getGrade()).divide(BigDecimal.valueOf(courseCount * 1.0));
             profCourse.setName(c.getName());
             profUni.getCourse().add(profCourse);
         }
-
+        profUni.setGPA(gpa);
         profUni.setStartDate(transcript.getUniversity().getStartDate());
         profUni.setFinishDate(transcript.getUniversity().getFinishDate());
         profUni.setDegree(transcript.getUniversity().getDegree());
