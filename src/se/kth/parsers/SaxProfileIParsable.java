@@ -94,6 +94,11 @@ public class SaxProfileIParsable implements IParsable {
             position.setCompanyName(empPos.getCompany());
             position.setResponsibilities(empPos.getResponsibilities());
             position.setRole(empPos.getRole());
+            Profile.Position.Office office = new Profile.Position.Office();
+            office.setOfficeName(company.getOffice().getOfficeName());
+            office.setLat(company.getOffice().getLat());
+            office.setLng(company.getOffice().getLng());
+            position.setOffice(office);
             profile.getPosition().add(position);
         }
     }
@@ -117,7 +122,11 @@ public class SaxProfileIParsable implements IParsable {
                 case "companyName": companyName = true; break;
                 case "website": website = true; break;
                 case "numberOfEmployees": numberOfEmployees = true; break;
-                case "office": office = true; break;
+                case "office":
+                    Company.Office officeObj = new Company.Office();
+                    officeObj.setOfficeName(attributes.getValue("officeName"));
+                    company.setOffice(officeObj);
+                    break;
                 case "lat": officeLat = true; break;
                 case "lng": officeLng = true; break;
             }
@@ -141,10 +150,6 @@ public class SaxProfileIParsable implements IParsable {
             if (numberOfEmployees) {
                 company.setNumberOfEmployees(new BigInteger(content));
                 numberOfEmployees = false;
-            }
-            if (office) {
-                company.setOffice(new Company.Office());
-                office = false;
             }
             if (officeLat) {
                 company.getOffice().setLat(new BigDecimal(content));
