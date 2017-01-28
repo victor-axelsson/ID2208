@@ -122,7 +122,7 @@ public class Main {
         //IParsable p = new JAXBparser();
         //IParsable p = new XSLTParser();
 
-        Profile profile = p.parse("dude");
+        Profile profile = p.parse();
 
 
         m.marshal(profile, new File(instances.getAbsolutePath()+"/profile.xml"));
