@@ -126,21 +126,6 @@ public class JAXBparser extends Parser implements IParsable {
             profile = null;
         }
 
-
-        /*
-        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-        m.marshal(company, System.out);
-        m.setSchema(schema);
-        */
-
-        //IParsable p = new DomProfileIParsable();
-//        IParsable p = new SaxProfileIParsable();
-
-  //      Profile profile = p.parse("dude");
-
-
-    //    m.marshal(profile, new File(instances.getAbsolutePath()+"/profile.xml"));
-
         return profile;
     }
 }
