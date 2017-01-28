@@ -26,7 +26,15 @@
 				<xsl:copy-of select="$employmentRecord/*/position/finishDate"/>
 				<xsl:copy-of select="$company/*/office"/>
 			</position>
-			<xsl:copy-of select="$transcript/*/university"/>
+			<university>
+				<xsl:copy-of select="$transcript/*/university/degree"/>
+				<GPA>
+					<xsl:value-of select="sum($transcript/*/university/course/grade) div count($transcript/*/university/course/grade)" />
+				</GPA>
+				<xsl:copy-of select="$transcript/*/university/course"/>
+				<xsl:copy-of select="$transcript/*/university/startDate"/>
+				<xsl:copy-of select="$transcript/*/university/finishDate"/>
+			</university>
 			<project>
 				<xsl:copy-of select="$cv/*/project/startDate"/>
 				<xsl:copy-of select="$cv/*/project/finishDate"/>
