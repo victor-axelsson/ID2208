@@ -119,8 +119,8 @@ public class Main {
 
         //IParsable p = new DomProfileIParsable();
         //IParsable p = new SaxProfileIParsable();
-        //IParsable p = new JAXBparser();
-        IParsable p = new XSLTParser(); 
+        IParsable p = new JAXBparser();
+        //IParsable p = new XSLTParser();
 
         Profile profile = p.parse("dude");
 

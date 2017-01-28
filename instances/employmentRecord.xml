@@ -1,12 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ns2:employmentRecord xmlns:ns2="http://www.kth.se/ns/jobservicecompany">
-	<firstName>Larry</firstName>
-	<lastName>Barry</lastName>
-	<position>
-		<company>Co and sons</company>
-		<role>CEO</role>
-		<responsibilities>I had none</responsibilities>
-		<startDate>2000-01-26+01:00</startDate>
-		<finishDate>2005-01-26+01:00</finishDate>
-	</position>
-</ns2:employmentRecord>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ns2:employmentRecord xmlns:ns2="http://www.kth.se/ns/jobservicecompany"><firstName>Larry</firstName><lastName>Barry</lastName><position><company>Co and sons</company><role>CEO</role><responsibilities>I had none</responsibilities><startDate>2000-01-26+01:00</startDate><finishDate>1999-01-26+01:00</finishDate></position></ns2:employmentRecord>

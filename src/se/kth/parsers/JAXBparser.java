@@ -101,6 +101,16 @@ public class JAXBparser extends Parser implements IParsable {
 
     }
 
+    private Profile fillCompany(Profile profile, Company company) {
+        for(int i = 0; i < profile.getPosition().size(); i++) {
+            Profile.Position.Office office = new Profile.Position.Office();
+            office.setOfficeName(company.getOffice().getOfficeName());
+            office.setLat(company.getOffice().getLat());
+            office.setLng(company.getOffice().getLng());
+            profile.getPosition().get(i).setOffice(office);
+        }
+        return profile;
+    }
 
     @Override
     public Profile parse(String username) {
@@ -117,6 +127,7 @@ public class JAXBparser extends Parser implements IParsable {
             profile = fillCV(profile, cv);
             profile = fillEmploymentRecord(profile, employmentRecord);
             profile = fillTranscript(profile, transcript);
+            profile = fillCompany(profile, company);
 
         } catch (JAXBException e) {
             e.printStackTrace();
