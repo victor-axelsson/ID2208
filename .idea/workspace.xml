@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7c60ea8-91f7-4eb0-b704-a26301a01450" name="Default" comment="path stuff">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/kth/parsers/DomProfileParsable.java" afterPath="$PROJECT_DIR$/src/se/kth/parsers/DomProfileParsable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/kth/parsers/IParsable.java" afterPath="$PROJECT_DIR$/src/se/kth/parsers/IParsable.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/kth/parsers/JAXBparser.java" afterPath="$PROJECT_DIR$/src/se/kth/parsers/JAXBparser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/kth/parsers/Parser.java" afterPath="$PROJECT_DIR$/src/se/kth/parsers/Parser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/kth/parsers/SaxProfileIParsable.java" afterPath="$PROJECT_DIR$/src/se/kth/parsers/SaxProfileIParsable.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/se/kth/parsers/XSLTParser.java" afterPath="$PROJECT_DIR$/src/se/kth/parsers/XSLTParser.java" />
     </list>
@@ -28,8 +29,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/se/kth/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1950">
-              <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+            <state relative-caret-position="305">
+              <caret line="120" column="19" lean-forward="true" selection-start-line="120" selection-start-column="19" selection-end-line="120" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -40,8 +41,8 @@
       <file leaf-file-name="JAXBparser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/se/kth/parsers/JAXBparser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="21" column="38" lean-forward="false" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+            <state relative-caret-position="122">
+              <caret line="119" column="0" lean-forward="true" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -63,7 +64,7 @@
         <entry file="file://$PROJECT_DIR$/instances/profile.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="8" lean-forward="true" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+              <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -72,28 +73,28 @@
       <file leaf-file-name="DomProfileParsable.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/se/kth/parsers/DomProfileParsable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="21" column="46" lean-forward="false" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
+            <state relative-caret-position="185">
+              <caret line="212" column="26" lean-forward="false" selection-start-line="212" selection-start-column="26" selection-end-line="212" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SaxProfileIParsable.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SaxProfileIParsable.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/se/kth/parsers/SaxProfileIParsable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="20" column="32" lean-forward="false" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+            <state relative-caret-position="285">
+              <caret line="32" column="30" lean-forward="false" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="XSLTParser.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="XSLTParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/se/kth/parsers/XSLTParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="26" column="13" lean-forward="true" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+            <state relative-caret-position="330">
+              <caret line="34" column="31" lean-forward="false" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -102,8 +103,8 @@
       <file leaf-file-name="IParsable.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/se/kth/parsers/IParsable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="41" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="41" />
+            <state relative-caret-position="135">
+              <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -170,12 +171,13 @@
         <option value="$PROJECT_DIR$/src/se/kth/factories/EmploymentFactory.java" />
         <option value="$PROJECT_DIR$/src/se/kth/factories/CompanyFactory.java" />
         <option value="$PROJECT_DIR$/src/se/kth/Main.java" />
-        <option value="$PROJECT_DIR$/src/se/kth/Main.java" />
         <option value="$PROJECT_DIR$/src/se/kth/parsers/Parser.java" />
+        <option value="$PROJECT_DIR$/src/se/kth/Main.java" />
+        <option value="$PROJECT_DIR$/src/se/kth/parsers/IParsable.java" />
         <option value="$PROJECT_DIR$/src/se/kth/parsers/DomProfileParsable.java" />
         <option value="$PROJECT_DIR$/src/se/kth/parsers/JAXBparser.java" />
-        <option value="$PROJECT_DIR$/src/se/kth/parsers/SaxProfileIParsable.java" />
         <option value="$PROJECT_DIR$/src/se/kth/parsers/XSLTParser.java" />
+        <option value="$PROJECT_DIR$/src/se/kth/parsers/SaxProfileIParsable.java" />
       </list>
     </option>
   </component>
@@ -677,7 +679,7 @@
       <workItem from="1485433143991" duration="1062000" />
       <workItem from="1485434442607" duration="3069000" />
       <workItem from="1485590842158" duration="2692000" />
-      <workItem from="1485599168663" duration="774000" />
+      <workItem from="1485599168663" duration="1395000" />
     </task>
     <task id="LOCAL-00001" summary="lil fix">
       <created>1485427937527</created>
@@ -697,7 +699,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16134000" />
+    <option name="totallyTimeSpent" value="16755000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="704" extended-state="6" />
@@ -758,13 +760,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/se/kth/parsers/JAXBparser.java</url>
-          <line>110</line>
+          <line>113</line>
           <properties />
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/se/kth/Main.java</url>
-          <line>124</line>
+          <line>123</line>
           <properties />
           <option name="timeStamp" value="34" />
         </line-breakpoint>
@@ -1075,28 +1077,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/se/kth/parsers/DomProfileIParsable.java" />
-    <entry file="file://$PROJECT_DIR$/src/se/kth/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1950">
-          <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/instances/profile.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="8" lean-forward="true" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/kth/parsers/IParsable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="41" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="41" />
+          <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -1109,36 +1093,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/kth/parsers/DomProfileParsable.java">
+    <entry file="file://$PROJECT_DIR$/src/se/kth/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="21" column="46" lean-forward="false" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/kth/parsers/JAXBparser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="21" column="38" lean-forward="false" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+        <state relative-caret-position="305">
+          <caret line="120" column="19" lean-forward="true" selection-start-line="120" selection-start-column="19" selection-end-line="120" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/kth/parsers/SaxProfileIParsable.java">
+    <entry file="file://$PROJECT_DIR$/src/se/kth/parsers/IParsable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="20" column="32" lean-forward="false" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+        <state relative-caret-position="135">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/kth/parsers/DomProfileParsable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="212" column="26" lean-forward="false" selection-start-line="212" selection-start-column="26" selection-end-line="212" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/kth/parsers/JAXBparser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="119" column="0" lean-forward="true" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/se/kth/parsers/XSLTParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="26" column="13" lean-forward="true" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        <state relative-caret-position="330">
+          <caret line="34" column="31" lean-forward="false" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/kth/parsers/SaxProfileIParsable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="32" column="30" lean-forward="false" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
           <folding />
         </state>
       </provider>

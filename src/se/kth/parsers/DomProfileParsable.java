@@ -209,7 +209,7 @@ public class DomProfileParsable extends Parser {
     }
 
     @Override
-    public Profile parse(String username) {
+    public Profile parse() {
         ObjectFactory objFactory = new ObjectFactory();
         Profile profile = objFactory.createProfile();
 

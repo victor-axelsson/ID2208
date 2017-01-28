@@ -116,7 +116,7 @@ public class JAXBparser extends Parser {
     }
 
     @Override
-    public Profile parse(String username) {
+    public Profile parse() {
 
         Profile profile = null;
 

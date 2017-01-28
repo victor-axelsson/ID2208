@@ -18,7 +18,7 @@ import java.nio.file.Paths;
 /**
  * Created by victoraxelsson on 2017-01-26.
  */
-public class SaxProfileIParsable {
+public class SaxProfileIParsable extends Parser{
 
     Profile profile;
     Company company;
@@ -27,7 +27,7 @@ public class SaxProfileIParsable {
     Cv cv;
 
     @Override
-    public Profile parse(String username) {
+    public Profile parse() {
 
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParser saxParser = null;

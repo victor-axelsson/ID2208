@@ -19,7 +19,7 @@ import javax.xml.transform.Transformer;
  */
 public class XSLTParser extends Parser {
     @Override
-    public Profile parse(String username) {
+    public Profile parse() {
 
         TransformerFactory factory = TransformerFactory.newInstance();
         Source xslt = new StreamSource(new File(instances.getAbsolutePath() + "/transformation.xsl"));
