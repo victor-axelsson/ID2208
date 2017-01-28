@@ -7,6 +7,7 @@ import se.kth.ns.jobservicecompany.*;
 import se.kth.factories.CvFactory;
 import se.kth.parsers.DomProfileIParsable;
 import se.kth.parsers.IParsable;
+import se.kth.parsers.JAXBparser;
 import se.kth.parsers.SaxProfileIParsable;
 
 import javax.xml.XMLConstants;
@@ -120,7 +121,8 @@ public class Main {
         */
 
         //IParsable p = new DomProfileIParsable();
-        IParsable p = new SaxProfileIParsable();
+        //IParsable p = new SaxProfileIParsable();
+        IParsable p = new JAXBparser();
 
         Profile profile = p.parse("dude");
 
