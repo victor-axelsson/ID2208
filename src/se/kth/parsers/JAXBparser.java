@@ -19,7 +19,7 @@ import java.math.BigDecimal;
 /**
  * Created by victoraxelsson on 2017-01-28.
  */
-public class JAXBparser extends Parser implements IParsable {
+public class JAXBparser extends Parser {
 
     private SchemaFactory sf;
 

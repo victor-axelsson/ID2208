@@ -19,7 +19,7 @@ import java.math.BigDecimal;
 /**
  * Created by victoraxelsson on 2017-01-26.
  */
-public class DomProfileParsable extends Parser implements IParsable {
+public class DomProfileParsable extends Parser {
 
     private String basePath = "/Users/victoraxelsson/Desktop/web_services/asignment1/";
     private DocumentBuilderFactory factory;
