@@ -4,6 +4,7 @@
 	<xsl:variable name="cv" select="document('cv.xml')"/>
 	<xsl:variable name="employmentRecord" select="document('employmentRecord.xml')"/>
 	<xsl:variable name="transcript" select="document('transcript.xml')"/>
+	<xsl:variable name="company" select="document('company.xml')"/>
 
 	<xsl:template match="@*|node()">
 		<xsl:copy>
@@ -23,6 +24,7 @@
 				<xsl:copy-of select="$employmentRecord/*/position/responsibilities"/>
 				<xsl:copy-of select="$employmentRecord/*/position/startDate"/>
 				<xsl:copy-of select="$employmentRecord/*/position/finishDate"/>
+				<xsl:copy-of select="$company/*/office"/>
 			</postion>
 			<xsl:copy-of select="$transcript/*/university"/>
 			<project>
