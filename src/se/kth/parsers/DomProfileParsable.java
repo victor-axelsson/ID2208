@@ -15,13 +15,13 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.nio.file.Paths;
 
 /**
  * Created by victoraxelsson on 2017-01-26.
  */
 public class DomProfileParsable extends Parser implements IParsable {
 
-    private String basePath = "/Users/victoraxelsson/Desktop/web_services/asignment1/";
     private DocumentBuilderFactory factory;
 
 
@@ -31,13 +31,13 @@ public class DomProfileParsable extends Parser implements IParsable {
         factory.setNamespaceAware(true);
         factory.setIgnoringElementContentWhitespace(true);
         factory.setAttribute( "http://java.sun.com/xml/jaxp/properties/schemaLanguage", "http://www.w3.org/2001/XMLSchema");
-        factory.setAttribute( "http://java.sun.com/xml/jaxp/properties/schemaSource", basePath + "/schemas/companyInfo.xsd");
+        factory.setAttribute( "http://java.sun.com/xml/jaxp/properties/schemaSource", schemas.getAbsolutePath() + "/companyInfo.xsd");
     }
 
     private Profile fillCompanyInfo(Profile profile) throws ParserConfigurationException, IOException, SAXException {
         Document document = null;
         DocumentBuilder builder = factory.newDocumentBuilder();
-        document = builder.parse(new File(basePath + "instances/jayronis.xml"));
+        document = builder.parse(new File(instances.getAbsolutePath() + "/jayronis.xml"));
         Node root = document.getFirstChild();
         /*
         String companyName = node.getFirstChild().getTextContent();
@@ -78,7 +78,7 @@ public class DomProfileParsable extends Parser implements IParsable {
     private Profile fillCv(Profile profile) throws ParserConfigurationException, IOException, SAXException {
         Document document = null;
         DocumentBuilder builder = factory.newDocumentBuilder();
-        document = builder.parse(new File(basePath + "instances/cv.xml"));
+        document = builder.parse(new File(instances.getAbsolutePath() + "/cv.xml"));
         Node root = document.getFirstChild();
 
         Node child = root.getFirstChild();
@@ -116,7 +116,7 @@ public class DomProfileParsable extends Parser implements IParsable {
     private Profile fillEmployeeRecord(Profile profile) throws ParserConfigurationException, IOException, SAXException {
         Document document = null;
         DocumentBuilder builder = factory.newDocumentBuilder();
-        document = builder.parse(new File(basePath + "instances/employmentRecord.xml"));
+        document = builder.parse(new File(instances.getAbsolutePath() + "/employmentRecord.xml"));
         Node root = document.getFirstChild();
 
         Node child = root.getFirstChild();
@@ -156,7 +156,7 @@ public class DomProfileParsable extends Parser implements IParsable {
     private Profile fillTranscript(Profile profile) throws ParserConfigurationException, IOException, SAXException {
         Document document = null;
         DocumentBuilder builder = factory.newDocumentBuilder();
-        document = builder.parse(new File(basePath + "instances/transcript.xml"));
+        document = builder.parse(new File(instances.getAbsolutePath() + "/transcript.xml"));
         Node root = document.getFirstChild();
 
 
@@ -174,6 +174,8 @@ public class DomProfileParsable extends Parser implements IParsable {
 
         //Parse courses
         Profile.University profUni = new Profile.University();
+        BigDecimal gpa = BigDecimal.ZERO;
+        int courseCount = 0;
         while (child.getLocalName().equals("course")){
             Profile.University.Course profCourse = new Profile.University.Course();
             Node courseChild = child.getFirstChild();
@@ -185,6 +187,8 @@ public class DomProfileParsable extends Parser implements IParsable {
             profCourse.setGrade(new BigDecimal(grade));
             profCourse.setName(name);
             profUni.getCourse().add(profCourse);
+            courseCount++;
+            gpa = gpa.add(new BigDecimal(grade)).divide(BigDecimal.valueOf(courseCount * 1.0));
 
             courseIterator = courseIterator.getNextSibling();
             child = child.getNextSibling();
@@ -198,6 +202,7 @@ public class DomProfileParsable extends Parser implements IParsable {
         profUni.setStartDate(XMLGregorianCalendarImpl.parse(startTime));
         profUni.setFinishDate(XMLGregorianCalendarImpl.parse(stopTime));
         profUni.setDegree(degree);
+        profUni.setGPA(gpa);
         profile.setUniversity(profUni);
 
         return profile;
