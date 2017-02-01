@@ -21,7 +21,7 @@ import java.nio.file.Paths;
  */
 public class Main {
 
-    private static void generateCompanies() throws Exception{
+    private static void generateCompanies() throws Exception {
         File schemas = Paths.get(".", "schemas").normalize().toFile();
         File instances = Paths.get(".", "instances").normalize().toFile();
 
@@ -36,10 +36,10 @@ public class Main {
         JAXBContext jc = JAXBContext.newInstance(Company.class);
         Marshaller m = jc.createMarshaller();
         m.setSchema(schema);
-        m.marshal(company, new File(instances.getAbsolutePath()+"/company.xml"));
+        m.marshal(company, new File(instances.getAbsolutePath() + "/company.xml"));
     }
 
-    private static void generateEmployments() throws Exception{
+    private static void generateEmployments() throws Exception {
         File schemas = Paths.get(".", "schemas").normalize().toFile();
         File instances = Paths.get(".", "instances").normalize().toFile();
 
@@ -55,10 +55,10 @@ public class Main {
         JAXBContext jc = JAXBContext.newInstance(EmploymentRecord.class);
         Marshaller m = jc.createMarshaller();
         m.setSchema(schema);
-        m.marshal(record, new File(instances.getAbsolutePath()+"/employmentRecord.xml"));
+        m.marshal(record, new File(instances.getAbsolutePath() + "/employmentRecord.xml"));
     }
 
-    private static void generateCvs() throws Exception{
+    private static void generateCvs() throws Exception {
         File schemas = Paths.get(".", "schemas").normalize().toFile();
         File instances = Paths.get(".", "instances").normalize().toFile();
 
@@ -73,10 +73,10 @@ public class Main {
         JAXBContext jc = JAXBContext.newInstance(Cv.class);
         Marshaller m = jc.createMarshaller();
         m.setSchema(schema);
-        m.marshal(cv, new File(instances.getAbsolutePath()+"/cv.xml"));
+        m.marshal(cv, new File(instances.getAbsolutePath() + "/cv.xml"));
     }
 
-    private static void generateTranscripts() throws Exception{
+    private static void generateTranscripts() throws Exception {
         File schemas = Paths.get(".", "schemas").normalize().toFile();
         File instances = Paths.get(".", "instances").normalize().toFile();
 
@@ -91,13 +91,13 @@ public class Main {
         JAXBContext jc = JAXBContext.newInstance(Transcript.class);
         Marshaller m = jc.createMarshaller();
         m.setSchema(schema);
-        m.marshal(transcript, new File(instances.getAbsolutePath()+"/transcript.xml"));
+        m.marshal(transcript, new File(instances.getAbsolutePath() + "/transcript.xml"));
     }
 
     public static void main(String[] args) throws Exception {
-        //generateCompanies();
-        //generateEmployments();
-        //generateCvs();
+        generateCompanies();
+        generateEmployments();
+        generateCvs();
         //generateTranscripts();
 
         File schemas = Paths.get(".", "schemas").normalize().toFile();
@@ -117,15 +117,15 @@ public class Main {
         m.setSchema(schema);
         */
 
-        IParsable p = new DomProfileParsable();
+        //IParsable p = new DomProfileParsable();
         //IParsable p = new SaxProfileIParsable();
         //IParsable p = new JAXBparser();
-        //IParsable p = new XSLTParser();
+        IParsable p = new XSLTParser();
 
         Profile profile = p.parse();
 
-
-        m.marshal(profile, new File(instances.getAbsolutePath()+"/profile.xml"));
+        if (profile != null)
+            m.marshal(profile, new File(instances.getAbsolutePath() + "/profile.xml"));
     }
 
 }
