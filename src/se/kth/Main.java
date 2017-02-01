@@ -95,9 +95,9 @@ public class Main {
     }
 
     public static void main(String[] args) throws Exception {
-        generateCompanies();
-        generateEmployments();
-        generateCvs();
+        //generateCompanies();
+        //generateEmployments();
+        //generateCvs();
         //generateTranscripts();
 
         File schemas = Paths.get(".", "schemas").normalize().toFile();

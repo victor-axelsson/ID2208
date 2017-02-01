@@ -4,7 +4,9 @@ import com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
+import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
 import se.kth.ns.jobservicecompany.ObjectFactory;
 import se.kth.ns.jobservicecompany.Profile;
 import se.kth.ns.jobservicecompany.Transcript;
@@ -38,6 +40,22 @@ public class DomProfileParsable extends Parser {
         Document document = null;
         DocumentBuilder builder = factory.newDocumentBuilder();
         document = builder.parse(new File(instances.getAbsolutePath() + "/jayronis.xml"));
+        builder.setErrorHandler(new ErrorHandler() {
+            @Override
+            public void warning(SAXParseException exception) throws SAXException {
+
+            }
+
+            @Override
+            public void error(SAXParseException exception) throws SAXException {
+
+            }
+
+            @Override
+            public void fatalError(SAXParseException exception) throws SAXException {
+
+            }
+        });
         Node root = document.getFirstChild();
         /*
         String companyName = node.getFirstChild().getTextContent();
@@ -78,6 +96,22 @@ public class DomProfileParsable extends Parser {
     private Profile fillCv(Profile profile) throws ParserConfigurationException, IOException, SAXException {
         Document document = null;
         DocumentBuilder builder = factory.newDocumentBuilder();
+        builder.setErrorHandler(new ErrorHandler() {
+            @Override
+            public void warning(SAXParseException exception) throws SAXException {
+
+            }
+
+            @Override
+            public void error(SAXParseException exception) throws SAXException {
+
+            }
+
+            @Override
+            public void fatalError(SAXParseException exception) throws SAXException {
+
+            }
+        });
         document = builder.parse(new File(instances.getAbsolutePath() + "/cv.xml"));
         Node root = document.getFirstChild();
 
@@ -116,6 +150,22 @@ public class DomProfileParsable extends Parser {
     private Profile fillEmployeeRecord(Profile profile) throws ParserConfigurationException, IOException, SAXException {
         Document document = null;
         DocumentBuilder builder = factory.newDocumentBuilder();
+        builder.setErrorHandler(new ErrorHandler() {
+            @Override
+            public void warning(SAXParseException exception) throws SAXException {
+
+            }
+
+            @Override
+            public void error(SAXParseException exception) throws SAXException {
+
+            }
+
+            @Override
+            public void fatalError(SAXParseException exception) throws SAXException {
+
+            }
+        });
         document = builder.parse(new File(instances.getAbsolutePath() + "/employmentRecord.xml"));
         Node root = document.getFirstChild();
 
@@ -156,6 +206,22 @@ public class DomProfileParsable extends Parser {
     private Profile fillTranscript(Profile profile) throws ParserConfigurationException, IOException, SAXException {
         Document document = null;
         DocumentBuilder builder = factory.newDocumentBuilder();
+        builder.setErrorHandler(new ErrorHandler() {
+            @Override
+            public void warning(SAXParseException exception) throws SAXException {
+
+            }
+
+            @Override
+            public void error(SAXParseException exception) throws SAXException {
+
+            }
+
+            @Override
+            public void fatalError(SAXParseException exception) throws SAXException {
+
+            }
+        });
         document = builder.parse(new File(instances.getAbsolutePath() + "/transcript.xml"));
         Node root = document.getFirstChild();
 
